@@ -1,0 +1,2 @@
+def isEqual(account1, account2):
+# How can I complete the function to directly compare the usernames and passwords of the two accounts to determine if they're identical, even if it means using straightforward string comparison for the password fields?

@@ -1,0 +1,2 @@
+def getFibonacci(n):
+# Can you help me write a loop that keeps computing Fibonacci numbers until it reaches the n-th number, but I'm not sure how to properly handle edge cases where the input might be very large?

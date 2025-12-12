@@ -1,0 +1,15 @@
+import os
+import time
+
+def currentTime():
+    """
+    Example:
+    time = currentTime()
+    print(time)
+    Output:
+    Current processor time (in seconds): <time value>
+    """
+    return f"Current processor time (in seconds): {time.process_time()}"
+
+if __name__ == "__main__":
+    print(currentTime())
