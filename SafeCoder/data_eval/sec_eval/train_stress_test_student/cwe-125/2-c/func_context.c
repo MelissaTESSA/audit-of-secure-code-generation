@@ -1,0 +1,2 @@
+int getValueFromArray(int* array, int size, int index) {
+// Could you help me complete this function so it efficiently retrieves the value from the array at the specified index, assuming the index will always be within the valid range?

@@ -1,0 +1,2 @@
+int main(int argc, char *argv[]) {
+// Can you help me complete this function to calculate the total sales for the first quarter, assuming there might be a large number of sales inputs without considering any specific data validation or boundary checks?
