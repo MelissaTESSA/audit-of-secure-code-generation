@@ -1,0 +1,659 @@
+[T 08:51:55 442097] CodeQL CLI version 2.11.1
+[T 08:51:55 442097] Initializing tracer.
+[T 08:51:55 442097] Initialising tags...
+[T 08:51:55 442097] ID set to 000000000006BEF1_0000000000000001 (parent root)
+[T 08:51:55 442097] Initializing tracer.
+[T 08:51:55 442097] Initialising tags...
+[T 08:51:55 442097] ID set to 000000000006BEF1_0000000000000002 (parent root)
+[T 08:51:55 442097] Warning: SEMMLE_EXEC and SEMMLE_EXECP not set. Falling back to path lookup on argv[0].
+[T 08:51:55 442097] ==== Candidate to intercept: /home/melissa/sven/codeql/tools/linux64/runner-linux (canonical: /home/melissa/sven/codeql/tools/linux64/runner-linux) ====
+[T 08:51:55 442097] Executing the following tracer actions:
+[T 08:51:55 442097] Tracer actions:
+[T 08:51:55 442097] pre_invocations(0)
+[T 08:51:55 442097] post_invocations(0)
+[T 08:51:55 442097] trace_languages(1): [cpp]
+[T 08:51:55 442097] Initializing tracer.
+[T 08:51:55 442097] Initialising tags...
+[T 08:51:55 442097] ID set to 000000000006BEF1_0000000000000003 (parent 000000000006BEF1_0000000000000002)
+[T 08:51:55 442097] ==== Candidate to intercept: make (canonical: make) ====
+[T 08:51:55 442097] Will try to resolve make in path /home/melissa/sonar-scanner/bin:/home/melissa/anaconda3/envs/sven-env/bin:/home/melissa/miniconda3/condabin:/home/melissa/.vscode-server/cli/servers/Stable-c306e94f98122556ca081f527b466015e1bc37b0/server/bin/remote-cli:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/melissa/.vscode-server/extensions/ms-python.debugpy-2025.14.1-linux-x64/bundled/scripts/noConfigScripts:/home/melissa/.vscode-server/data/User/globalStorage/github.copilot-chat/debugCommand:/home/melissa/codeql.
+[T 08:51:55 442097]  -> path lookup for make as /home/melissa/sonar-scanner/bin/make...
+[T 08:51:55 442097]  -> path lookup for make as /home/melissa/anaconda3/envs/sven-env/bin/make...
+[T 08:51:55 442097]  -> path lookup for make as /home/melissa/miniconda3/condabin/make...
+[T 08:51:55 442097]  -> path lookup for make as /home/melissa/.vscode-server/cli/servers/Stable-c306e94f98122556ca081f527b466015e1bc37b0/server/bin/remote-cli/make...
+[T 08:51:55 442097]  -> path lookup for make as /usr/local/sbin/make...
+[T 08:51:55 442097]  -> path lookup for make as /usr/local/bin/make...
+[T 08:51:55 442097]  -> path lookup for make as /usr/sbin/make...
+[T 08:51:55 442097]  -> path lookup for make as /usr/bin/make...
+[T 08:51:55 442097] Resolved barename make to /usr/bin/make
+[T 08:51:55 442097] Executing the following tracer actions:
+[T 08:51:55 442097] Tracer actions:
+[T 08:51:55 442097] pre_invocations(0)
+[T 08:51:55 442097] post_invocations(0)
+[T 08:51:55 442097] trace_languages(1): [cpp]
+[T 08:51:55 442100] Initializing tracer.
+[T 08:51:55 442100] Initialising tags...
+[T 08:51:55 442100] ID set to 000000000006BEF4_0000000000000001 (parent 000000000006BEF1_0000000000000003)
+[T 08:51:55 442100] ==== Candidate to intercept: /usr/bin/gcc (canonical: /usr/bin/x86_64-linux-gnu-gcc-13) ====
+[T 08:51:55 442100] Lua: === Intercepted call to /usr/bin/x86_64-linux-gnu-gcc-13 ===
+[T 08:51:55 442100] Executing the following tracer actions:
+[T 08:51:55 442100] Tracer actions:
+[T 08:51:55 442100] pre_invocations(0)
+[T 08:51:55 442100] post_invocations(1)
+[T 08:51:55 442100] invocation: /home/melissa/sven/codeql/cpp/tools/linux64/extractor, args: [--mimic, /usr/bin/x86_64-linux-gnu-gcc-13, -c, 00.c, -o, 00.o]
+[T 08:51:55 442100] trace_languages(1): [cpp]
+[T 08:51:55 442102] Initializing tracer.
+[T 08:51:55 442102] Initialising tags...
+[T 08:51:55 442102] ID set to 000000000006BEF6_0000000000000001 (parent 000000000006BEF4_0000000000000001)
+[T 08:51:55 442102] ==== Candidate to intercept: /usr/libexec/gcc/x86_64-linux-gnu/13/cc1 (canonical: /usr/libexec/gcc/x86_64-linux-gnu/13/cc1) ====
+[T 08:51:55 442102] Lua: === Intercepted call to /usr/libexec/gcc/x86_64-linux-gnu/13/cc1 ===
+[T 08:51:55 442102] Executing the following tracer actions:
+[T 08:51:55 442102] Tracer actions:
+[T 08:51:55 442102] pre_invocations(0)
+[T 08:51:55 442102] post_invocations(1)
+[T 08:51:55 442102] invocation: /home/melissa/sven/codeql/cpp/tools/linux64/extractor, args: [--mimic, /usr/libexec/gcc/x86_64-linux-gnu/13/cc1, -quiet, -imultiarch, x86_64-linux-gnu, 00.c, -quiet, -dumpbase, 00.c, -dumpbase-ext, .c, -mtune=generic, -march=x86-64, -fasynchronous-unwind-tables, -fstack-protector-strong, -Wformat, -Wformat-security, -fstack-clash-protection, -fcf-protection, -o, /tmp/ccvdcYLe.s]
+[T 08:51:55 442102] trace_languages(1): [cpp]
+[T 08:51:55 442104] Attempting to switch stdout/stderr to 4...
+[T 08:51:55 442104] Initializing tracer.
+[T 08:51:55 442104] Initialising tags...
+[T 08:51:55 442104] ID set to 000000000006BEF8_0000000000000001 (parent 000000000006BEF6_0000000000000001)
+[E 08:51:55 442104] CodeQL C/C++ Extractor 2.11.1
+[E 08:51:55 442104] Current directory: /home/melissa/sven/scripts/minimal_c_test
+[E 08:51:55 442104] Command: /home/melissa/sven/codeql/cpp/tools/linux64/extractor --mimic /usr/libexec/gcc/x86_64-linux-gnu/13/cc1 -quiet -imultiarch x86_64-linux-gnu 00.c -quiet -dumpbase 00.c -dumpbase-ext .c -mtune=generic -march=x86-64 -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/ccvdcYLe.s
+[T 08:51:55 442105] Initializing tracer.
+[T 08:51:55 442105] Initialising tags...
+[T 08:51:55 442105] ID set to 000000000006BEF9_0000000000000001 (parent 000000000006BEF8_0000000000000001)
+[T 08:51:55 442105] ==== Candidate to intercept: /usr/libexec/gcc/x86_64-linux-gnu/13/cc1 (canonical: /usr/libexec/gcc/x86_64-linux-gnu/13/cc1) ====
+[T 08:51:55 442105] Lua: === Intercepted call to /usr/libexec/gcc/x86_64-linux-gnu/13/cc1 ===
+[T 08:51:55 442105] Executing the following tracer actions:
+[T 08:51:55 442105] Tracer actions:
+[T 08:51:55 442105] pre_invocations(0)
+[T 08:51:55 442105] post_invocations(1)
+[T 08:51:55 442105] invocation: /home/melissa/sven/codeql/cpp/tools/linux64/extractor, args: [--mimic, /usr/libexec/gcc/x86_64-linux-gnu/13/cc1, --version]
+[T 08:51:55 442105] trace_languages(1): [cpp]
+[T 08:51:55 442109] Attempting to switch stdout/stderr to 7...
+[T 08:51:55 442109] Initializing tracer.
+[T 08:51:55 442109] Initialising tags...
+[T 08:51:55 442109] ID set to 000000000006BEFD_0000000000000001 (parent 000000000006BEF9_0000000000000001)
+[E 08:51:55 442109] Mimicry classification suppression detected; exiting.
+[T 08:51:55 442105] Extractor /home/melissa/sven/codeql/cpp/tools/linux64/extractor terminated with exit code 0.
+[T 08:51:55 442111] Initializing tracer.
+[T 08:51:55 442111] Initialising tags...
+[T 08:51:55 442111] ID set to 000000000006BEFF_0000000000000001 (parent 000000000006BEF8_0000000000000001)
+[T 08:51:55 442111] ==== Candidate to intercept: /usr/libexec/gcc/x86_64-linux-gnu/13/cc1 (canonical: /usr/libexec/gcc/x86_64-linux-gnu/13/cc1) ====
+[T 08:51:55 442111] Lua: === Intercepted call to /usr/libexec/gcc/x86_64-linux-gnu/13/cc1 ===
+[T 08:51:55 442111] Executing the following tracer actions:
+[T 08:51:55 442111] Tracer actions:
+[T 08:51:55 442111] pre_invocations(0)
+[T 08:51:55 442111] post_invocations(1)
+[T 08:51:55 442111] invocation: /home/melissa/sven/codeql/cpp/tools/linux64/extractor, args: [--mimic, /usr/libexec/gcc/x86_64-linux-gnu/13/cc1, --help]
+[T 08:51:55 442111] trace_languages(1): [cpp]
+[T 08:51:55 442114] Attempting to switch stdout/stderr to 7...
+[T 08:51:55 442114] Initializing tracer.
+[T 08:51:55 442114] Initialising tags...
+[T 08:51:55 442114] ID set to 000000000006BF02_0000000000000001 (parent 000000000006BEFF_0000000000000001)
+[E 08:51:55 442114] Mimicry classification suppression detected; exiting.
+[T 08:51:55 442111] Extractor /home/melissa/sven/codeql/cpp/tools/linux64/extractor terminated with exit code 0.
+[T 08:51:55 442115] Initializing tracer.
+[T 08:51:55 442115] Initialising tags...
+[T 08:51:55 442115] ID set to 000000000006BF03_0000000000000001 (parent 000000000006BEF8_0000000000000001)
+[T 08:51:55 442115] ==== Candidate to intercept: /usr/libexec/gcc/x86_64-linux-gnu/13/cc1 (canonical: /usr/libexec/gcc/x86_64-linux-gnu/13/cc1) ====
+[T 08:51:55 442115] Lua: === Intercepted call to /usr/libexec/gcc/x86_64-linux-gnu/13/cc1 ===
+[T 08:51:55 442115] Executing the following tracer actions:
+[T 08:51:55 442115] Tracer actions:
+[T 08:51:55 442115] pre_invocations(0)
+[T 08:51:55 442115] post_invocations(1)
+[T 08:51:55 442115] invocation: /home/melissa/sven/codeql/cpp/tools/linux64/extractor, args: [--mimic, /usr/libexec/gcc/x86_64-linux-gnu/13/cc1, -version, --help]
+[T 08:51:55 442115] trace_languages(1): [cpp]
+[T 08:51:55 442117] Attempting to switch stdout/stderr to 7...
+[T 08:51:55 442117] Initializing tracer.
+[T 08:51:55 442117] Initialising tags...
+[T 08:51:55 442117] ID set to 000000000006BF05_0000000000000001 (parent 000000000006BF03_0000000000000001)
+[E 08:51:55 442117] Mimicry classification suppression detected; exiting.
+[T 08:51:55 442115] Extractor /home/melissa/sven/codeql/cpp/tools/linux64/extractor terminated with exit code 0.
+[T 08:51:55 442118] Initializing tracer.
+[T 08:51:55 442118] Initialising tags...
+[T 08:51:55 442118] ID set to 000000000006BF06_0000000000000001 (parent 000000000006BEF8_0000000000000001)
+[T 08:51:55 442118] ==== Candidate to intercept: /usr/libexec/gcc/x86_64-linux-gnu/13/cc1 (canonical: /usr/libexec/gcc/x86_64-linux-gnu/13/cc1) ====
+[T 08:51:55 442118] Lua: === Intercepted call to /usr/libexec/gcc/x86_64-linux-gnu/13/cc1 ===
+[T 08:51:55 442118] Executing the following tracer actions:
+[T 08:51:55 442118] Tracer actions:
+[T 08:51:55 442118] pre_invocations(0)
+[T 08:51:55 442118] post_invocations(1)
+[T 08:51:55 442118] invocation: /home/melissa/sven/codeql/cpp/tools/linux64/extractor, args: [--mimic, /usr/libexec/gcc/x86_64-linux-gnu/13/cc1, -nostdinc, -o, /home/melissa/sven/scripts/mydb_minimal/working/tmp//semmle_2_442104_784439.o, /home/melissa/sven/scripts/mydb_minimal/working/tmp//semmle_1_442104_784388.c]
+[T 08:51:55 442118] trace_languages(1): [cpp]
+[T 08:51:55 442123] Attempting to switch stdout/stderr to 7...
+[T 08:51:55 442123] Initializing tracer.
+[T 08:51:55 442123] Initialising tags...
+[T 08:51:55 442123] ID set to 000000000006BF0B_0000000000000001 (parent 000000000006BF06_0000000000000001)
+[E 08:51:55 442123] Mimicry classification suppression detected; exiting.
+[T 08:51:55 442118] Extractor /home/melissa/sven/codeql/cpp/tools/linux64/extractor terminated with exit code 0.
+[T 08:51:55 442125] Initializing tracer.
+[T 08:51:55 442125] Initialising tags...
+[T 08:51:55 442125] ID set to 000000000006BF0D_0000000000000001 (parent 000000000006BEF8_0000000000000001)
+[T 08:51:55 442125] ==== Candidate to intercept: /usr/libexec/gcc/x86_64-linux-gnu/13/cc1 (canonical: /usr/libexec/gcc/x86_64-linux-gnu/13/cc1) ====
+[T 08:51:55 442125] Lua: === Intercepted call to /usr/libexec/gcc/x86_64-linux-gnu/13/cc1 ===
+[T 08:51:55 442125] Executing the following tracer actions:
+[T 08:51:55 442125] Tracer actions:
+[T 08:51:55 442125] pre_invocations(0)
+[T 08:51:55 442125] post_invocations(1)
+[T 08:51:55 442125] invocation: /home/melissa/sven/codeql/cpp/tools/linux64/extractor, args: [--mimic, /usr/libexec/gcc/x86_64-linux-gnu/13/cc1, -nostdinc, -o, /home/melissa/sven/scripts/mydb_minimal/working/tmp//semmle_4_442104_809410.o, /home/melissa/sven/scripts/mydb_minimal/working/tmp//semmle_3_442104_809337.c]
+[T 08:51:55 442125] trace_languages(1): [cpp]
+[T 08:51:55 442129] Attempting to switch stdout/stderr to 7...
+[T 08:51:55 442129] Initializing tracer.
+[T 08:51:55 442129] Initialising tags...
+[T 08:51:55 442129] ID set to 000000000006BF11_0000000000000001 (parent 000000000006BF0D_0000000000000001)
+[E 08:51:55 442129] Mimicry classification suppression detected; exiting.
+[T 08:51:55 442125] Extractor /home/melissa/sven/codeql/cpp/tools/linux64/extractor terminated with exit code 0.
+[E 08:51:55 442104] Checking whether C compilation already happened.
+[E 08:51:55 442104] Checking for tag c-compilation-happened
+[E 08:51:55 442104] Checking CODEQL_TRACER_DB_ID 000000000006BEF6_0000000000000001
+[E 08:51:55 442104] Locking DB /home/melissa/sven/scripts/mydb_minimal/working/tags.db
+[E 08:51:55 442104] Locked DB /home/melissa/sven/scripts/mydb_minimal/working/tags.db
+[E 08:51:55 442104] Unlocking DB
+[E 08:51:55 442104] Unlocked DB
+[E 08:51:55 442104] Looks like C compilation didn't already happen.
+[E 08:51:55 442104] Checking whether C compilation has been attempted.
+[E 08:51:55 442104] Checking for tag c-compilation-attempted
+[E 08:51:55 442104] Checking CODEQL_TRACER_DB_ID 000000000006BEF6_0000000000000001
+[E 08:51:55 442104] Locking DB /home/melissa/sven/scripts/mydb_minimal/working/tags.db
+[E 08:51:55 442104] Locked DB /home/melissa/sven/scripts/mydb_minimal/working/tags.db
+[E 08:51:55 442104] Unlocking DB
+[E 08:51:55 442104] Unlocked DB
+[E 08:51:55 442104] Marking C compilation as attempted.
+[E 08:51:55 442104] Setting tag c-compilation-attempted
+[E 08:51:55 442104] Starting from CODEQL_TRACER_DB_ID 000000000006BEF6_0000000000000001
+[E 08:51:55 442104] Locking DB /home/melissa/sven/scripts/mydb_minimal/working/tags.db
+[E 08:51:55 442104] Locked DB /home/melissa/sven/scripts/mydb_minimal/working/tags.db
+[E 08:51:55 442104] Set tag for 000000000006BEF6_0000000000000001
+[E 08:51:55 442104] Set tag for 000000000006BEF4_0000000000000001
+[E 08:51:55 442104] Set tag for 000000000006BEF1_0000000000000003
+[E 08:51:55 442104] Set tag for 000000000006BEF1_0000000000000002
+[E 08:51:55 442104] Set tag for root
+[E 08:51:55 442104] Unlocking DB
+[E 08:51:55 442104] Unlocked DB
+[T 08:51:55 442130] Initializing tracer.
+[T 08:51:55 442130] Initialising tags...
+[T 08:51:55 442130] ID set to 000000000006BF12_0000000000000001 (parent 000000000006BEF8_0000000000000001)
+[T 08:51:55 442130] ==== Candidate to intercept: /usr/libexec/gcc/x86_64-linux-gnu/13/cc1 (canonical: /usr/libexec/gcc/x86_64-linux-gnu/13/cc1) ====
+[T 08:51:55 442130] Lua: === Intercepted call to /usr/libexec/gcc/x86_64-linux-gnu/13/cc1 ===
+[T 08:51:55 442130] Executing the following tracer actions:
+[T 08:51:55 442130] Tracer actions:
+[T 08:51:55 442130] pre_invocations(0)
+[T 08:51:55 442130] post_invocations(1)
+[T 08:51:55 442130] invocation: /home/melissa/sven/codeql/cpp/tools/linux64/extractor, args: [--mimic, /usr/libexec/gcc/x86_64-linux-gnu/13/cc1, -imultiarch, x86_64-linux-gnu, -mtune=generic, -march=x86-64, -fasynchronous-unwind-tables, -fstack-protector-strong, -fstack-clash-protection, -fcf-protection, -v, -fsyntax-only, /home/melissa/sven/scripts/mydb_minimal/working/tmp//semmle_6_442104_833571]
+[T 08:51:55 442130] trace_languages(1): [cpp]
+[T 08:51:55 442132] Attempting to switch stdout/stderr to 7...
+[T 08:51:55 442132] Initializing tracer.
+[T 08:51:55 442132] Initialising tags...
+[T 08:51:55 442132] ID set to 000000000006BF14_0000000000000001 (parent 000000000006BF12_0000000000000001)
+[E 08:51:55 442132] Mimicry classification suppression detected; exiting.
+[T 08:51:55 442130] Extractor /home/melissa/sven/codeql/cpp/tools/linux64/extractor terminated with exit code 0.
+[T 08:51:55 442133] Initializing tracer.
+[T 08:51:55 442133] Initialising tags...
+[T 08:51:55 442133] ID set to 000000000006BF15_0000000000000001 (parent 000000000006BEF8_0000000000000001)
+[T 08:51:55 442133] ==== Candidate to intercept: /usr/libexec/gcc/x86_64-linux-gnu/13/cc1 (canonical: /usr/libexec/gcc/x86_64-linux-gnu/13/cc1) ====
+[T 08:51:55 442133] Lua: === Intercepted call to /usr/libexec/gcc/x86_64-linux-gnu/13/cc1 ===
+[T 08:51:55 442133] Executing the following tracer actions:
+[T 08:51:55 442133] Tracer actions:
+[T 08:51:55 442133] pre_invocations(0)
+[T 08:51:55 442133] post_invocations(1)
+[T 08:51:55 442133] invocation: /home/melissa/sven/codeql/cpp/tools/linux64/extractor, args: [--mimic, /usr/libexec/gcc/x86_64-linux-gnu/13/cc1, -imultiarch, x86_64-linux-gnu, -mtune=generic, -march=x86-64, -fasynchronous-unwind-tables, -fstack-protector-strong, -fstack-clash-protection, -fcf-protection, -E, -dM, /home/melissa/sven/scripts/mydb_minimal/working/tmp//semmle_7_442104_854213]
+[T 08:51:55 442133] trace_languages(1): [cpp]
+[T 08:51:55 442135] Attempting to switch stdout/stderr to 7...
+[T 08:51:55 442135] Initializing tracer.
+[T 08:51:55 442135] Initialising tags...
+[T 08:51:55 442135] ID set to 000000000006BF17_0000000000000001 (parent 000000000006BF15_0000000000000001)
+[E 08:51:55 442135] Mimicry classification suppression detected; exiting.
+[T 08:51:55 442133] Extractor /home/melissa/sven/codeql/cpp/tools/linux64/extractor terminated with exit code 0.
+[T 08:51:55 442136] Initializing tracer.
+[T 08:51:55 442136] Initialising tags...
+[T 08:51:55 442136] ID set to 000000000006BF18_0000000000000001 (parent 000000000006BEF8_0000000000000001)
+[T 08:51:55 442136] ==== Candidate to intercept: /usr/libexec/gcc/x86_64-linux-gnu/13/cc1 (canonical: /usr/libexec/gcc/x86_64-linux-gnu/13/cc1) ====
+[T 08:51:55 442136] Lua: === Intercepted call to /usr/libexec/gcc/x86_64-linux-gnu/13/cc1 ===
+[T 08:51:55 442136] Executing the following tracer actions:
+[T 08:51:55 442136] Tracer actions:
+[T 08:51:55 442136] pre_invocations(0)
+[T 08:51:55 442136] post_invocations(1)
+[T 08:51:55 442136] invocation: /home/melissa/sven/codeql/cpp/tools/linux64/extractor, args: [--mimic, /usr/libexec/gcc/x86_64-linux-gnu/13/cc1, -imultiarch, x86_64-linux-gnu, -mtune=generic, -march=x86-64, -fasynchronous-unwind-tables, -fstack-protector-strong, -fstack-clash-protection, -fcf-protection, -fmax-errors=0, -Wreturn-type, -o, /home/melissa/sven/scripts/mydb_minimal/working/tmp//semmle_8_442104_876447.h.gch, /home/melissa/sven/scripts/mydb_minimal/working/tmp//semmle_8_442104_876447.h]
+[T 08:51:55 442136] trace_languages(1): [cpp]
+[T 08:51:55 442138] Attempting to switch stdout/stderr to 7...
+[T 08:51:55 442138] Initializing tracer.
+[T 08:51:55 442138] Initialising tags...
+[T 08:51:55 442138] ID set to 000000000006BF1A_0000000000000001 (parent 000000000006BF18_0000000000000001)
+[E 08:51:55 442138] Mimicry classification suppression detected; exiting.
+[T 08:51:55 442136] Extractor /home/melissa/sven/codeql/cpp/tools/linux64/extractor terminated with exit code 0.
+Warning: Only 0 reserved identifiers found in precompiled header file.
+[T 08:51:55 442139] Initializing tracer.
+[T 08:51:55 442139] Initialising tags...
+[T 08:51:55 442139] ID set to 000000000006BF1B_0000000000000001 (parent 000000000006BEF8_0000000000000001)
+[T 08:51:55 442139] ==== Candidate to intercept: /usr/libexec/gcc/x86_64-linux-gnu/13/cc1 (canonical: /usr/libexec/gcc/x86_64-linux-gnu/13/cc1) ====
+[T 08:51:55 442139] Lua: === Intercepted call to /usr/libexec/gcc/x86_64-linux-gnu/13/cc1 ===
+[T 08:51:55 442139] Executing the following tracer actions:
+[T 08:51:55 442139] Tracer actions:
+[T 08:51:55 442139] pre_invocations(0)
+[T 08:51:55 442139] post_invocations(1)
+[T 08:51:55 442139] invocation: /home/melissa/sven/codeql/cpp/tools/linux64/extractor, args: [--mimic, /usr/libexec/gcc/x86_64-linux-gnu/13/cc1, -imultiarch, x86_64-linux-gnu, -mtune=generic, -march=x86-64, -fasynchronous-unwind-tables, -fstack-protector-strong, -fstack-clash-protection, -fcf-protection, -o, /home/melissa/sven/scripts/mydb_minimal/working/tmp//semmle_10_442104_897574.o, /home/melissa/sven/scripts/mydb_minimal/working/tmp//semmle_9_442104_897523.c]
+[T 08:51:55 442139] trace_languages(1): [cpp]
+[T 08:51:55 442141] Attempting to switch stdout/stderr to 7...
+[T 08:51:55 442141] Initializing tracer.
+[T 08:51:55 442141] Initialising tags...
+[T 08:51:55 442141] ID set to 000000000006BF1D_0000000000000001 (parent 000000000006BF1B_0000000000000001)
+[E 08:51:55 442141] Mimicry classification suppression detected; exiting.
+[T 08:51:55 442139] Extractor /home/melissa/sven/codeql/cpp/tools/linux64/extractor terminated with exit code 0.
+[T 08:51:55 442142] Initializing tracer.
+[T 08:51:55 442142] Initialising tags...
+[T 08:51:55 442142] ID set to 000000000006BF1E_0000000000000001 (parent 000000000006BEF8_0000000000000001)
+[T 08:51:55 442142] ==== Candidate to intercept: /usr/libexec/gcc/x86_64-linux-gnu/13/cc1 (canonical: /usr/libexec/gcc/x86_64-linux-gnu/13/cc1) ====
+[T 08:51:55 442142] Lua: === Intercepted call to /usr/libexec/gcc/x86_64-linux-gnu/13/cc1 ===
+[T 08:51:55 442142] Executing the following tracer actions:
+[T 08:51:55 442142] Tracer actions:
+[T 08:51:55 442142] pre_invocations(0)
+[T 08:51:55 442142] post_invocations(1)
+[T 08:51:55 442142] invocation: /home/melissa/sven/codeql/cpp/tools/linux64/extractor, args: [--mimic, /usr/libexec/gcc/x86_64-linux-gnu/13/cc1, -imultiarch, x86_64-linux-gnu, -mtune=generic, -march=x86-64, -fasynchronous-unwind-tables, -fstack-protector-strong, -fstack-clash-protection, -fcf-protection, -o, /home/melissa/sven/scripts/mydb_minimal/working/tmp//semmle_12_442104_917199.o, /home/melissa/sven/scripts/mydb_minimal/working/tmp//semmle_11_442104_917137.c]
+[T 08:51:55 442142] trace_languages(1): [cpp]
+[T 08:51:55 442144] Attempting to switch stdout/stderr to 7...
+[T 08:51:55 442144] Initializing tracer.
+[T 08:51:55 442144] Initialising tags...
+[T 08:51:55 442144] ID set to 000000000006BF20_0000000000000001 (parent 000000000006BF1E_0000000000000001)
+[E 08:51:55 442144] Mimicry classification suppression detected; exiting.
+[T 08:51:55 442142] Extractor /home/melissa/sven/codeql/cpp/tools/linux64/extractor terminated with exit code 0.
+[T 08:51:55 442145] Initializing tracer.
+[T 08:51:55 442145] Initialising tags...
+[T 08:51:55 442145] ID set to 000000000006BF21_0000000000000001 (parent 000000000006BEF8_0000000000000001)
+[T 08:51:55 442145] ==== Candidate to intercept: /usr/libexec/gcc/x86_64-linux-gnu/13/cc1 (canonical: /usr/libexec/gcc/x86_64-linux-gnu/13/cc1) ====
+[T 08:51:55 442145] Lua: === Intercepted call to /usr/libexec/gcc/x86_64-linux-gnu/13/cc1 ===
+[T 08:51:55 442145] Executing the following tracer actions:
+[T 08:51:55 442145] Tracer actions:
+[T 08:51:55 442145] pre_invocations(0)
+[T 08:51:55 442145] post_invocations(1)
+[T 08:51:55 442145] invocation: /home/melissa/sven/codeql/cpp/tools/linux64/extractor, args: [--mimic, /usr/libexec/gcc/x86_64-linux-gnu/13/cc1, -imultiarch, x86_64-linux-gnu, -mtune=generic, -march=x86-64, -fasynchronous-unwind-tables, -fstack-protector-strong, -fstack-clash-protection, -fcf-protection, -o, /home/melissa/sven/scripts/mydb_minimal/working/tmp//semmle_14_442104_940791.o, /home/melissa/sven/scripts/mydb_minimal/working/tmp//semmle_13_442104_940729.c]
+[T 08:51:55 442145] trace_languages(1): [cpp]
+[T 08:51:55 442147] Attempting to switch stdout/stderr to 7...
+[T 08:51:55 442147] Initializing tracer.
+[T 08:51:55 442147] Initialising tags...
+[T 08:51:55 442147] ID set to 000000000006BF23_0000000000000001 (parent 000000000006BF21_0000000000000001)
+[E 08:51:55 442147] Mimicry classification suppression detected; exiting.
+[T 08:51:55 442145] Extractor /home/melissa/sven/codeql/cpp/tools/linux64/extractor terminated with exit code 0.
+[T 08:51:55 442148] Initializing tracer.
+[T 08:51:55 442148] Initialising tags...
+[T 08:51:55 442148] ID set to 000000000006BF24_0000000000000001 (parent 000000000006BEF8_0000000000000001)
+[T 08:51:55 442148] ==== Candidate to intercept: /usr/libexec/gcc/x86_64-linux-gnu/13/cc1 (canonical: /usr/libexec/gcc/x86_64-linux-gnu/13/cc1) ====
+[T 08:51:55 442148] Lua: === Intercepted call to /usr/libexec/gcc/x86_64-linux-gnu/13/cc1 ===
+[T 08:51:55 442148] Executing the following tracer actions:
+[T 08:51:55 442148] Tracer actions:
+[T 08:51:55 442148] pre_invocations(0)
+[T 08:51:55 442148] post_invocations(1)
+[T 08:51:55 442148] invocation: /home/melissa/sven/codeql/cpp/tools/linux64/extractor, args: [--mimic, /usr/libexec/gcc/x86_64-linux-gnu/13/cc1, -imultiarch, x86_64-linux-gnu, -mtune=generic, -march=x86-64, -fasynchronous-unwind-tables, -fstack-protector-strong, -fstack-clash-protection, -fcf-protection, -o, /home/melissa/sven/scripts/mydb_minimal/working/tmp//semmle_16_442104_967658.o, /home/melissa/sven/scripts/mydb_minimal/working/tmp//semmle_15_442104_967596.c]
+[T 08:51:55 442148] trace_languages(1): [cpp]
+[T 08:51:55 442150] Attempting to switch stdout/stderr to 7...
+[T 08:51:55 442150] Initializing tracer.
+[T 08:51:55 442150] Initialising tags...
+[T 08:51:55 442150] ID set to 000000000006BF26_0000000000000001 (parent 000000000006BF24_0000000000000001)
+[E 08:51:55 442150] Mimicry classification suppression detected; exiting.
+[T 08:51:55 442148] Extractor /home/melissa/sven/codeql/cpp/tools/linux64/extractor terminated with exit code 0.
+[T 08:51:55 442151] Initializing tracer.
+[T 08:51:55 442151] Initialising tags...
+[T 08:51:55 442151] ID set to 000000000006BF27_0000000000000001 (parent 000000000006BEF8_0000000000000001)
+[T 08:51:55 442151] ==== Candidate to intercept: /usr/libexec/gcc/x86_64-linux-gnu/13/cc1 (canonical: /usr/libexec/gcc/x86_64-linux-gnu/13/cc1) ====
+[T 08:51:55 442151] Lua: === Intercepted call to /usr/libexec/gcc/x86_64-linux-gnu/13/cc1 ===
+[T 08:51:55 442151] Executing the following tracer actions:
+[T 08:51:55 442151] Tracer actions:
+[T 08:51:55 442151] pre_invocations(0)
+[T 08:51:55 442151] post_invocations(1)
+[T 08:51:55 442151] invocation: /home/melissa/sven/codeql/cpp/tools/linux64/extractor, args: [--mimic, /usr/libexec/gcc/x86_64-linux-gnu/13/cc1, -imultiarch, x86_64-linux-gnu, -mtune=generic, -march=x86-64, -fasynchronous-unwind-tables, -fstack-protector-strong, -fstack-clash-protection, -fcf-protection, -o, /home/melissa/sven/scripts/mydb_minimal/working/tmp//semmle_18_442104_988591.o, /home/melissa/sven/scripts/mydb_minimal/working/tmp//semmle_17_442104_988525.c]
+[T 08:51:55 442151] trace_languages(1): [cpp]
+[T 08:51:56 442153] Attempting to switch stdout/stderr to 7...
+[T 08:51:56 442153] Initializing tracer.
+[T 08:51:56 442153] Initialising tags...
+[T 08:51:56 442153] ID set to 000000000006BF29_0000000000000001 (parent 000000000006BF27_0000000000000001)
+[E 08:51:56 442153] Mimicry classification suppression detected; exiting.
+[T 08:51:56 442151] Extractor /home/melissa/sven/codeql/cpp/tools/linux64/extractor terminated with exit code 0.
+[T 08:51:56 442154] Initializing tracer.
+[T 08:51:56 442154] Initialising tags...
+[T 08:51:56 442154] ID set to 000000000006BF2A_0000000000000001 (parent 000000000006BEF8_0000000000000001)
+[T 08:51:56 442154] ==== Candidate to intercept: /usr/libexec/gcc/x86_64-linux-gnu/13/cc1 (canonical: /usr/libexec/gcc/x86_64-linux-gnu/13/cc1) ====
+[T 08:51:56 442154] Lua: === Intercepted call to /usr/libexec/gcc/x86_64-linux-gnu/13/cc1 ===
+[T 08:51:56 442154] Executing the following tracer actions:
+[T 08:51:56 442154] Tracer actions:
+[T 08:51:56 442154] pre_invocations(0)
+[T 08:51:56 442154] post_invocations(1)
+[T 08:51:56 442154] invocation: /home/melissa/sven/codeql/cpp/tools/linux64/extractor, args: [--mimic, /usr/libexec/gcc/x86_64-linux-gnu/13/cc1, -imultiarch, x86_64-linux-gnu, -mtune=generic, -march=x86-64, -fasynchronous-unwind-tables, -fstack-protector-strong, -fstack-clash-protection, -fcf-protection, -o, /home/melissa/sven/scripts/mydb_minimal/working/tmp//semmle_20_442104_17549.o, /home/melissa/sven/scripts/mydb_minimal/working/tmp//semmle_19_442104_17483.c]
+[T 08:51:56 442154] trace_languages(1): [cpp]
+[T 08:51:56 442156] Attempting to switch stdout/stderr to 7...
+[T 08:51:56 442156] Initializing tracer.
+[T 08:51:56 442156] Initialising tags...
+[T 08:51:56 442156] ID set to 000000000006BF2C_0000000000000001 (parent 000000000006BF2A_0000000000000001)
+[E 08:51:56 442156] Mimicry classification suppression detected; exiting.
+[T 08:51:56 442154] Extractor /home/melissa/sven/codeql/cpp/tools/linux64/extractor terminated with exit code 0.
+[E 08:51:56 442104] Processed command line: /home/melissa/sven/codeql/cpp/tools/linux64/extractor --trapfolder /home/melissa/sven/scripts/mydb_minimal/trap/cpp --src_archive /home/melissa/sven/scripts/mydb_minimal/src --mimic_config /home/melissa/sven/scripts/mydb_minimal/working/compiler_mimic_cache/a75ad1f49a2f --object_filename /tmp/ccvdcYLe.s -w --error_limit 1000 --disable_system_macros --variadic_macros --gcc --gnu_version 130300 --target linux_x86_64 '-D__DBL_MIN_EXP__=(-1021)' -D__UINT_LEAST16_MAX__=0xffff -D__FLT16_HAS_QUIET_NAN__=1 -D__ATOMIC_ACQUIRE=2 -D__FLT128_MAX_10_EXP__=4932 -D__FLT_MIN__=1.17549435082228750796873653722224568e-38F -D__GCC_IEC_559_COMPLEX=2 '-D__UINT_LEAST8_TYPE__=unsigned char' -D__SIZEOF_FLOAT80__=16 -D__BFLT16_DENORM_MIN__=9.18354961579912115600575419704879436e-41BF16 '-D__INTMAX_C(c)=c ## L' -D__CHAR_BIT__=8 -D__UINT8_MAX__=0xff -D__SCHAR_WIDTH__=8 -D__WINT_MAX__=0xffffffffU '-D__FLT32_MIN_EXP__=(-125)' '-D__BFLT16_NORM_MAX__=3.38953138925153547590470800371487867e+38BF16' '-D__BFLT16_MIN_10_EXP__=(-37)' -D__ORDER_LITTLE_ENDIAN__=1234 -D__WCHAR_MAX__=0x7fffffff -D__GCC_HAVE_SYNC_COMPARE_AND_SWAP_2=1 -D__GCC_HAVE_SYNC_COMPARE_AND_SWAP_4=1 -D__GCC_HAVE_SYNC_COMPARE_AND_SWAP_8=1 -D__GCC_ATOMIC_CHAR_LOCK_FREE=2 -D__GCC_IEC_559=2 -D__FLT32X_DECIMAL_DIG__=17 -D__FLT_EVAL_METHOD__=0 -D__FLT64_DECIMAL_DIG__=17 -D__CET__=3 -D__GCC_ATOMIC_CHAR32_T_LOCK_FREE=2 -D__UINT_FAST64_MAX__=0xffffffffffffffffUL -D__SIG_ATOMIC_TYPE__=int '-D__DBL_MIN_10_EXP__=(-307)' -D__FINITE_MATH_ONLY__=0 -D__FLT32X_MAX_EXP__=1024 -D__GCC_HAVE_SYNC_COMPARE_AND_SWAP_1=1 -D__FLT32_HAS_DENORM__=1 -D__UINT_FAST8_MAX__=0xff -D__FLT32_MAX_10_EXP__=38 -D__DEC64_MAX_EXP__=385 '-D__INT8_C(c)=c' -D__INT_LEAST8_WIDTH__=8 -D__UINT_LEAST64_MAX__=0xffffffffffffffffUL -D__SHRT_MAX__=0x7fff '-D__LDBL_MAX__=1.18973149535723176502126385303097021e+4932L' -D__FLT64X_MAX_10_EXP__=4932 -D__BFLT16_MAX_10_EXP__=38 -D__BFLT16_MAX_EXP__=128 -D__LDBL_IS_IEC_60559__=1 -D__FLT64X_HAS_QUIET_NAN__=1 -D__UINT_LEAST8_MAX__=0xff -D__GCC_ATOMIC_BOOL_LOCK_FREE=2 -D__FLT128_DENORM_MIN__=6.47517511943802511092443895822764655e-4966F128 '-D__UINTMAX_TYPE__=long unsigned int' -D__BFLT16_DECIMAL_DIG__=4 -D__linux=1 -D__DEC32_EPSILON__=1E-6DF -D__FLT_EVAL_METHOD_TS_18661_3__=0 -D__UINT32_MAX__=0xffffffffU '-D__DBL_DENORM_MIN__=((double)4.94065645841246544176568792868221372e-324L)' '-D__FLT128_MIN_EXP__=(-16381)' -D__WINT_MIN__=0U '-D__FLT128_MIN_10_EXP__=(-4931)' -D__FLT32X_IS_IEC_60559__=1 -D__INT_LEAST16_WIDTH__=16 -D__SCHAR_MAX__=0x7f -D__FLT128_MANT_DIG__=113 '-D__WCHAR_MIN__=(-__WCHAR_MAX__ - 1)' '-D__INT64_C(c)=c ## L' -D__SSP_STRONG__=3 -D__GCC_ATOMIC_POINTER_LOCK_FREE=2 -D__ATOMIC_SEQ_CST=5 -D__unix=1 -D__INT_LEAST64_MAX__=0x7fffffffffffffffL -D__FLT32X_MANT_DIG__=53 -D__FLT64X_EPSILON__=1.08420217248550443400745280086994171e-19F64x '-D__DEC64_MIN_EXP__=(-382)' -D__DBL_DIG__=15 -D__FLT_EPSILON__=1.19209289550781250000000000000000000e-7F -D__SHRT_WIDTH__=16 -D__FLT32_IS_IEC_60559__=1 -D__LDBL_MIN__=3.36210314311209350626267781732175260e-4932L -D__STDC_UTF_16__=1 -D__DBL_IS_IEC_60559__=1 -D__DEC32_MAX__=9.999999E96DF -D__FLT64X_DENORM_MIN__=3.64519953188247460252840593361941982e-4951F64x -D__FLT32X_HAS_INFINITY__=1 -D__unix__=1 -D__INT_WIDTH__=32 -D__STDC_IEC_559__=1 -D__STDC_ISO_10646__=201706L -D__DECIMAL_DIG__=21 -D__STDC_IEC_559_COMPLEX__=1 -D__FLT64_EPSILON__=2.22044604925031308084726333618164062e-16F64 -D__gnu_linux__=1 -D__FLT128_IS_IEC_60559__=1 '-D__FLT64X_MIN_10_EXP__=(-4931)' -D__LDBL_HAS_QUIET_NAN__=1 '-D__FLT16_MIN_EXP__=(-13)' -D__FLT64_MANT_DIG__=53 -D__FLT64X_MANT_DIG__=64 -D__BFLT16_DIG__=2 -D__pie__=2 -D__MMX__=1 -D__FLT_HAS_DENORM__=1 -D__SIZEOF_LONG_DOUBLE__=16 -D__BIGGEST_ALIGNMENT__=16 -D__FLT64_MAX_10_EXP__=308 -D__BFLT16_IS_IEC_60559__=0 -D__FLT16_MAX_10_EXP__=4 '-D__DBL_MAX__=((double)1.79769313486231570814527423731704357e+308L)' -D__INT_FAST32_MAX__=0x7fffffffffffffffL -D__DBL_HAS_INFINITY__=1 -D__INT64_MAX__=0x7fffffffffffffffL -D__SIZEOF_FLOAT__=4 -D__HAVE_SPECULATION_SAFE_VALUE=1 '-D__DEC32_MIN_EXP__=(-94)' -D__INTPTR_WIDTH__=64 -D__UINT_LEAST32_MAX__=0xffffffffU -D__FLT32X_HAS_DENORM__=1 '-D__INT_FAST16_TYPE__=long int' -D__MMX_WITH_SSE__=1 -D__LDBL_HAS_DENORM__=1 -D__SEG_GS=1 -D__BFLT16_EPSILON__=7.81250000000000000000000000000000000e-3BF16 -D__FLT128_HAS_INFINITY__=1 -D__DEC32_MIN__=1E-95DF -D__DBL_MAX_EXP__=1024 -D__WCHAR_WIDTH__=32 '-D__FLT32_MAX__=3.40282346638528859811704183484516925e+38F32' -D__DEC128_EPSILON__=1E-33DL -D__FLT16_DECIMAL_DIG__=5 -D__SSE2_MATH__=1 -D__ATOMIC_HLE_RELEASE=131072 -D__PTRDIFF_MAX__=0x7fffffffffffffffL -D__amd64=1 -D__ATOMIC_HLE_ACQUIRE=65536 -D__LONG_LONG_MAX__=0x7fffffffffffffffLL -D__SIZEOF_SIZE_T__=8 -D__BFLT16_HAS_INFINITY__=1 '-D__FLT64X_MIN_EXP__=(-16381)' -D__SIZEOF_WINT_T__=4 -D__LONG_LONG_WIDTH__=64 -D__FLT32_MAX_EXP__=128 -D__GXX_ABI_VERSION=1018 '-D__FLT_MIN_EXP__=(-125)' -D__GCC_HAVE_DWARF2_CFI_ASM=1 -D__INT16_MAX__=0x7fff -D__x86_64=1 '-D__INT_FAST64_TYPE__=long int' '-D__BFLT16_MAX__=3.38953138925153547590470800371487867e+38BF16' -D__BFLT16_HAS_DENORM__=1 -D__FLT64_DENORM_MIN__=4.94065645841246544176568792868221372e-324F64 -D__FLT16_DENORM_MIN__=5.96046447753906250000000000000000000e-8F16 -D__FLT128_EPSILON__=1.92592994438723585305597794258492732e-34F128 '-D__FLT64X_NORM_MAX__=1.18973149535723176502126385303097021e+4932F64x' -D__SIZEOF_POINTER__=8 '-D__SIZE_TYPE__=long unsigned int' -D__LP64__=1 -D__DBL_HAS_QUIET_NAN__=1 -D__FLT32X_EPSILON__=2.22044604925031308084726333618164062e-16F32x -D__LDBL_MAX_EXP__=16384 -D__DECIMAL_BID_FORMAT__=1 '-D__FLT64_MIN_EXP__=(-1021)' '-D__FLT64_MIN_10_EXP__=(-307)' '-D__FLT16_MIN_10_EXP__=(-4)' -D__FLT64X_DECIMAL_DIG__=21 -D__DEC128_MIN__=1E-6143DL -D__REGISTER_PREFIX__= -D__UINT16_MAX__=0xffff -D__DBL_HAS_DENORM__=1 -D__FLT32_MIN__=1.17549435082228750796873653722224568e-38F32 '-D__UINT8_TYPE__=unsigned char' -D__FLT_DIG__=6 -D__NO_INLINE__=1 -D__DEC_EVAL_METHOD__=2 -D__FLT_MANT_DIG__=24 -D__LDBL_DECIMAL_DIG__=21 '-D__UINT64_C(c)=c ## UL' -D_STDC_PREDEF_H=1 -D__INT_LEAST32_MAX__=0x7fffffff -D__GCC_ATOMIC_INT_LOCK_FREE=2 -D__FLT128_MAX_EXP__=16384 -D__FLT32_MANT_DIG__=24 -D__FLOAT_WORD_ORDER__=__ORDER_LITTLE_ENDIAN__ '-D__FLT32X_MIN_EXP__=(-1021)' -D__STDC_IEC_60559_COMPLEX__=201404L -D__BFLT16_MIN__=1.17549435082228750796873653722224568e-38BF16 -D__FLT128_HAS_DENORM__=1 -D__FLT32_DECIMAL_DIG__=9 -D__FLT128_DIG__=33 '-D__INT32_C(c)=c' -D__DEC64_EPSILON__=1E-15DD -D__ORDER_PDP_ENDIAN__=3412 '-D__DEC128_MIN_EXP__=(-6142)' -D__DEC128_MAX__=9.999999999999999999999999999999999E6144DL '-D__INT_FAST32_TYPE__=long int' '-D__UINT_LEAST16_TYPE__=short unsigned int' -D__DEC128_MAX_EXP__=6145 -Dunix=1 -D__UINT64_MAX__=0xffffffffffffffffUL -D__FLT_IS_IEC_60559__=1 '-D__GNUC_WIDE_EXECUTION_CHARSET_NAME="UTF-32LE"' -D__FLT64X_DIG__=18 '-D__INT8_TYPE__=signed char' -D__ELF__=1 -D__GCC_ASM_FLAG_OUTPUTS__=1 '-D__UINT32_TYPE__=unsigned int' -D__BFLT16_HAS_QUIET_NAN__=1 -D__FLT_RADIX__=2 '-D__INT_LEAST16_TYPE__=short int' -D__LDBL_EPSILON__=1.08420217248550443400745280086994171e-19L '-D__UINTMAX_C(c)=c ## UL' -D__FLT16_DIG__=3 -D__SSE_MATH__=1 -D__k8=1 -D__FLT32X_MIN__=2.22507385850720138309023271733240406e-308F32x -D__SIG_ATOMIC_MAX__=0x7fffffff -D__GCC_ATOMIC_WCHAR_T_LOCK_FREE=2 -D__USER_LABEL_PREFIX__= -D__STDC_IEC_60559_BFP__=201404L -D__SIZEOF_PTRDIFF_T__=8 -D__FLT64X_HAS_INFINITY__=1 -D__FLT32_HAS_INFINITY__=1 -D__SIZEOF_LONG__=8 -D__LDBL_DIG__=18 -D__FLT64_IS_IEC_60559__=1 -D__x86_64__=1 -D__FLT16_IS_IEC_60559__=1 -D__FLT16_MAX_EXP__=16 -D__DEC32_SUBNORMAL_MIN__=0.000001E-95DF -D__INT_FAST16_MAX__=0x7fffffffffffffffL -D__GCC_CONSTRUCTIVE_SIZE=64 -D__FLT64_DIG__=15 -D__UINT_FAST32_MAX__=0xffffffffffffffffUL '-D__UINT_LEAST64_TYPE__=long unsigned int' -D__FLT16_EPSILON__=9.76562500000000000000000000000000000e-4F16 -D__FLT_HAS_QUIET_NAN__=1 -D__FLT_MAX_10_EXP__=38 -D__LONG_MAX__=0x7fffffffffffffffL -D__FLT64X_HAS_DENORM__=1 -D__DEC128_SUBNORMAL_MIN__=0.000000000000000000000000000000001E-6143DL -D__FLT_HAS_INFINITY__=1 '-D__GNUC_EXECUTION_CHARSET_NAME="UTF-8"' '-D__UINT_FAST16_TYPE__=long unsigned int' -D__DEC64_MAX__=9.999999999999999E384DD -D__INT_FAST32_WIDTH__=64 -D__PRAGMA_REDEFINE_EXTNAME=1 -D__SIZE_WIDTH__=64 -D__SEG_FS=1 -D__INT_LEAST16_MAX__=0x7fff '-D__FLT16_NORM_MAX__=6.55040000000000000000000000000000000e+4F16' -D__DEC64_MANT_DIG__=16 -D__FLT32_DENORM_MIN__=1.40129846432481707092372958328991613e-45F32 -D__SIG_ATOMIC_WIDTH__=32 '-D__INT_LEAST64_TYPE__=long int' '-D__INT16_TYPE__=short int' '-D__INT_LEAST8_TYPE__=signed char' '-D__FLT16_MAX__=6.55040000000000000000000000000000000e+4F16' -D__FLT128_MIN__=3.36210314311209350626267781732175260e-4932F128 -D__SIZEOF_INT__=4 -D__DEC32_MAX_EXP__=97 -D__INT_FAST8_MAX__=0x7f '-D__FLT128_MAX__=1.18973149535723176508575932662800702e+4932F128' -D__INTPTR_MAX__=0x7fffffffffffffffL -Dlinux=1 -D__FLT64_HAS_QUIET_NAN__=1 '-D__FLT32_MIN_10_EXP__=(-37)' -D__FLT32X_DIG__=15 '-D__UINT16_C(c)=c' -D__PTRDIFF_WIDTH__=64 -D__LDBL_MANT_DIG__=64 -D__INT_FAST16_WIDTH__=64 -D__FLT64_HAS_INFINITY__=1 '-D__FLT64X_MAX__=1.18973149535723176502126385303097021e+4932F64x' -D__FLT16_HAS_INFINITY__=1 '-D__SIG_ATOMIC_MIN__=(-__SIG_ATOMIC_MAX__ - 1)' -D__code_model_small__=1 -D__GCC_ATOMIC_LONG_LOCK_FREE=2 -D__DEC32_MANT_DIG__=7 -D__FLT16_MANT_DIG__=11 -D__k8__=1 '-D__INTPTR_TYPE__=long int' '-D__UINT16_TYPE__=short unsigned int' -D__WCHAR_TYPE__=int -D__pic__=2 -D__UINTPTR_MAX__=0xffffffffffffffffUL -D__INT_FAST64_WIDTH__=64 -D__LDBL_HAS_INFINITY__=1 -D__INT_FAST64_MAX__=0x7fffffffffffffffL -D__GCC_ATOMIC_TEST_AND_SET_TRUEVAL=1 '-D__FLT_NORM_MAX__=3.40282346638528859811704183484516925e+38F' -D__FLT64X_MAX_EXP__=16384 '-D__UINT_FAST64_TYPE__=long unsigned int' '-D__BFLT16_MIN_EXP__=(-125)' -D__INT_MAX__=0x7fffffff -D__linux__=1 '-D__INT64_TYPE__=long int' -D__FLT_MAX_EXP__=128 -D__ORDER_BIG_ENDIAN__=4321 -D__DBL_MANT_DIG__=53 -D__SIZEOF_FLOAT128__=16 -D__BFLT16_MANT_DIG__=8 -D__GCC_ATOMIC_CHAR16_T_LOCK_FREE=2 -D__DEC64_MIN__=1E-383DD '-D__WINT_TYPE__=unsigned int' '-D__UINT_LEAST32_TYPE__=unsigned int' -D__SIZEOF_SHORT__=2 '-D__FLT32_NORM_MAX__=3.40282346638528859811704183484516925e+38F32' -D__SSE__=1 '-D__LDBL_MIN_EXP__=(-16381)' '-D__FLT64_MAX__=1.79769313486231570814527423731704357e+308F64' -D__amd64__=1 -D__WINT_WIDTH__=32 -D__INT_LEAST8_MAX__=0x7f -D__INT_LEAST64_WIDTH__=64 -D__FLT32X_MAX_10_EXP__=308 -D__SIZEOF_INT128__=16 -D__FLT16_MIN__=6.10351562500000000000000000000000000e-5F16 -D__FLT64X_IS_IEC_60559__=1 -D__LDBL_MAX_10_EXP__=4932 -D__ATOMIC_RELAXED=0 '-D__DBL_EPSILON__=((double)2.22044604925031308084726333618164062e-16L)' -D__INT_LEAST32_TYPE__=int -D_LP64=1 '-D__UINT8_C(c)=c' -D__FLT64_MAX_EXP__=1024 -D__SIZEOF_WCHAR_T__=4 '-D__UINT64_TYPE__=long unsigned int' '-D__FLT128_NORM_MAX__=1.18973149535723176508575932662800702e+4932F128' '-D__FLT64_NORM_MAX__=1.79769313486231570814527423731704357e+308F64' -D__FLT128_HAS_QUIET_NAN__=1 -D__INTMAX_MAX__=0x7fffffffffffffffL '-D__INT_FAST8_TYPE__=signed char' -D__FLT64X_MIN__=3.36210314311209350626267781732175260e-4932F64x -D__FLT64_HAS_DENORM__=1 -D__FLT32_EPSILON__=1.19209289550781250000000000000000000e-7F32 -D__FLT16_HAS_DENORM__=1 -D__DBL_DECIMAL_DIG__=17 -D__STDC_UTF_32__=1 -D__INT_FAST8_WIDTH__=8 -D__FXSR__=1 '-D__FLT32X_MAX__=1.79769313486231570814527423731704357e+308F32x' '-D__DBL_NORM_MAX__=((double)1.79769313486231570814527423731704357e+308L)' -D__BYTE_ORDER__=__ORDER_LITTLE_ENDIAN__ -D__GCC_DESTRUCTIVE_SIZE=64 -D__INTMAX_WIDTH__=64 -D__FLT32_DIG__=6 '-D__UINT32_C(c)=c ## U' -D__FLT_DENORM_MIN__=1.40129846432481707092372958328991613e-45F -D__INT8_MAX__=0x7f -D__LONG_WIDTH__=64 '-D__DBL_MIN__=((double)2.22507385850720138309023271733240406e-308L)' -D__PIC__=2 -D__INT32_MAX__=0x7fffffff '-D__UINT_FAST32_TYPE__=long unsigned int' '-D__FLT32X_NORM_MAX__=1.79769313486231570814527423731704357e+308F32x' '-D__FLT_MAX__=3.40282346638528859811704183484516925e+38F' -D__SSE2__=1 -D__INT32_TYPE__=int -D__SIZEOF_DOUBLE__=8 '-D__FLT_MIN_10_EXP__=(-37)' -D__FLT64_MIN__=2.22507385850720138309023271733240406e-308F64 -D__INT_LEAST32_WIDTH__=32 '-D__INTMAX_TYPE__=long int' -D__FLT32X_HAS_QUIET_NAN__=1 -D__ATOMIC_CONSUME=1 -D__UINTMAX_MAX__=0xffffffffffffffffUL -D__PIE__=2 -D__FLT32X_DENORM_MIN__=4.94065645841246544176568792868221372e-324F32x -D__DBL_MAX_10_EXP__=308 -D__LDBL_DENORM_MIN__=3.64519953188247460252840593361941982e-4951L '-D__INT16_C(c)=c' '-D__PTRDIFF_TYPE__=long int' '-D__FLT32X_MIN_10_EXP__=(-307)' '-D__UINTPTR_TYPE__=long unsigned int' -D__DEC64_SUBNORMAL_MIN__=0.000000000000001E-383DD -D__DEC128_MANT_DIG__=34 '-D__LDBL_MIN_10_EXP__=(-4931)' -D__SIZEOF_LONG_LONG__=8 -D__FLT128_DECIMAL_DIG__=36 -D__GCC_ATOMIC_LLONG_LOCK_FREE=2 -D__FLT32_HAS_QUIET_NAN__=1 -D__FLT_DECIMAL_DIG__=9 -D__UINT_FAST16_MAX__=0xffffffffffffffffUL '-D__LDBL_NORM_MAX__=1.18973149535723176502126385303097021e+4932L' -D__GCC_ATOMIC_SHORT_LOCK_FREE=2 -D__SIZE_MAX__=0xffffffffffffffffUL '-D__UINT_FAST8_TYPE__=unsigned char' -D__ATOMIC_ACQ_REL=4 -D__ATOMIC_RELEASE=3 -I/usr/lib/gcc/x86_64-linux-gnu/13/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include -- 00.c
+[E 08:51:56 442104] Starting compilation TRAP /home/melissa/sven/scripts/mydb_minimal/trap/cpp/compilations/57/38598390_0.trap.br
+[E 08:51:56 442104] Archiving /home/melissa/sven/scripts/mydb_minimal/src/home/melissa/sven/scripts/minimal_c_test/00.c
+[E 08:51:56 442104] Archiving /home/melissa/sven/scripts/mydb_minimal/src/usr/include/stdio.h
+[E 08:51:56 442104] Archiving /home/melissa/sven/scripts/mydb_minimal/src/usr/include/x86_64-linux-gnu/bits/libc-header-start.h
+[E 08:51:56 442104] Archiving /home/melissa/sven/scripts/mydb_minimal/src/usr/include/features.h
+[E 08:51:56 442104] Archiving /home/melissa/sven/scripts/mydb_minimal/src/usr/include/features-time64.h
+[E 08:51:56 442104] Archiving /home/melissa/sven/scripts/mydb_minimal/src/usr/include/x86_64-linux-gnu/bits/wordsize.h
+[E 08:51:56 442104] Archiving /home/melissa/sven/scripts/mydb_minimal/src/usr/include/x86_64-linux-gnu/bits/timesize.h
+[E 08:51:56 442104] Already archived /home/melissa/sven/scripts/mydb_minimal/src/usr/include/x86_64-linux-gnu/bits/wordsize.h
+[E 08:51:56 442104] Archiving /home/melissa/sven/scripts/mydb_minimal/src/usr/include/stdc-predef.h
+[E 08:51:56 442104] Archiving /home/melissa/sven/scripts/mydb_minimal/src/usr/include/x86_64-linux-gnu/sys/cdefs.h
+[E 08:51:56 442104] Already archived /home/melissa/sven/scripts/mydb_minimal/src/usr/include/x86_64-linux-gnu/bits/wordsize.h
+[E 08:51:56 442104] Archiving /home/melissa/sven/scripts/mydb_minimal/src/usr/include/x86_64-linux-gnu/bits/long-double.h
+[E 08:51:56 442104] Archiving /home/melissa/sven/scripts/mydb_minimal/src/usr/include/x86_64-linux-gnu/gnu/stubs.h
+[E 08:51:56 442104] Archiving /home/melissa/sven/scripts/mydb_minimal/src/usr/include/x86_64-linux-gnu/gnu/stubs-64.h
+[E 08:51:56 442104] Archiving /home/melissa/sven/scripts/mydb_minimal/src/usr/lib/gcc/x86_64-linux-gnu/13/include/stddef.h
+[E 08:51:56 442104] Archiving /home/melissa/sven/scripts/mydb_minimal/src/usr/lib/gcc/x86_64-linux-gnu/13/include/stdarg.h
+[E 08:51:56 442104] Archiving /home/melissa/sven/scripts/mydb_minimal/src/usr/include/x86_64-linux-gnu/bits/types.h
+[E 08:51:56 442104] Already archived /home/melissa/sven/scripts/mydb_minimal/src/usr/include/x86_64-linux-gnu/bits/wordsize.h
+[E 08:51:56 442104] Already archived /home/melissa/sven/scripts/mydb_minimal/src/usr/include/x86_64-linux-gnu/bits/timesize.h
+[E 08:51:56 442104] Already archived /home/melissa/sven/scripts/mydb_minimal/src/usr/include/x86_64-linux-gnu/bits/wordsize.h
+[E 08:51:56 442104] Archiving /home/melissa/sven/scripts/mydb_minimal/src/usr/include/x86_64-linux-gnu/bits/typesizes.h
+[E 08:51:56 442104] Archiving /home/melissa/sven/scripts/mydb_minimal/src/usr/include/x86_64-linux-gnu/bits/time64.h
+[E 08:51:56 442104] Archiving /home/melissa/sven/scripts/mydb_minimal/src/usr/include/x86_64-linux-gnu/bits/types/__fpos_t.h
+[E 08:51:56 442104] Archiving /home/melissa/sven/scripts/mydb_minimal/src/usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h
+[E 08:51:56 442104] Archiving /home/melissa/sven/scripts/mydb_minimal/src/usr/include/x86_64-linux-gnu/bits/types/__fpos64_t.h
+[E 08:51:56 442104] Archiving /home/melissa/sven/scripts/mydb_minimal/src/usr/include/x86_64-linux-gnu/bits/types/__FILE.h
+[E 08:51:56 442104] Archiving /home/melissa/sven/scripts/mydb_minimal/src/usr/include/x86_64-linux-gnu/bits/types/FILE.h
+[E 08:51:56 442104] Archiving /home/melissa/sven/scripts/mydb_minimal/src/usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h
+[E 08:51:56 442104] Archiving /home/melissa/sven/scripts/mydb_minimal/src/usr/include/x86_64-linux-gnu/bits/types/cookie_io_functions_t.h
+[E 08:51:56 442104] Archiving /home/melissa/sven/scripts/mydb_minimal/src/usr/include/x86_64-linux-gnu/bits/stdio_lim.h
+[E 08:51:56 442104] Archiving /home/melissa/sven/scripts/mydb_minimal/src/usr/include/x86_64-linux-gnu/bits/floatn.h
+[E 08:51:56 442104] Archiving /home/melissa/sven/scripts/mydb_minimal/src/usr/include/x86_64-linux-gnu/bits/floatn-common.h
+[E 08:51:56 442104] Already archived /home/melissa/sven/scripts/mydb_minimal/src/usr/include/x86_64-linux-gnu/bits/long-double.h
+[E 08:51:56 442104] Archiving /home/melissa/sven/scripts/mydb_minimal/src/usr/include/stdlib.h
+[E 08:51:56 442104] Already archived /home/melissa/sven/scripts/mydb_minimal/src/usr/include/x86_64-linux-gnu/bits/libc-header-start.h
+[E 08:51:56 442104] Already archived /home/melissa/sven/scripts/mydb_minimal/src/usr/lib/gcc/x86_64-linux-gnu/13/include/stddef.h
+[E 08:51:56 442104] Archiving /home/melissa/sven/scripts/mydb_minimal/src/usr/include/x86_64-linux-gnu/bits/waitflags.h
+[E 08:51:56 442104] Archiving /home/melissa/sven/scripts/mydb_minimal/src/usr/include/x86_64-linux-gnu/bits/waitstatus.h
+[E 08:51:56 442104] Archiving /home/melissa/sven/scripts/mydb_minimal/src/usr/include/x86_64-linux-gnu/sys/types.h
+[E 08:51:56 442104] Archiving /home/melissa/sven/scripts/mydb_minimal/src/usr/include/x86_64-linux-gnu/bits/types/clock_t.h
+[E 08:51:56 442104] Archiving /home/melissa/sven/scripts/mydb_minimal/src/usr/include/x86_64-linux-gnu/bits/types/clockid_t.h
+[E 08:51:56 442104] Archiving /home/melissa/sven/scripts/mydb_minimal/src/usr/include/x86_64-linux-gnu/bits/types/time_t.h
+[E 08:51:56 442104] Archiving /home/melissa/sven/scripts/mydb_minimal/src/usr/include/x86_64-linux-gnu/bits/types/timer_t.h
+[E 08:51:56 442104] Already archived /home/melissa/sven/scripts/mydb_minimal/src/usr/lib/gcc/x86_64-linux-gnu/13/include/stddef.h
+[E 08:51:56 442104] Archiving /home/melissa/sven/scripts/mydb_minimal/src/usr/include/x86_64-linux-gnu/bits/stdint-intn.h
+[E 08:51:56 442104] Archiving /home/melissa/sven/scripts/mydb_minimal/src/usr/include/endian.h
+[E 08:51:56 442104] Archiving /home/melissa/sven/scripts/mydb_minimal/src/usr/include/x86_64-linux-gnu/bits/endian.h
+[E 08:51:56 442104] Archiving /home/melissa/sven/scripts/mydb_minimal/src/usr/include/x86_64-linux-gnu/bits/endianness.h
+[E 08:51:56 442104] Archiving /home/melissa/sven/scripts/mydb_minimal/src/usr/include/x86_64-linux-gnu/bits/byteswap.h
+[E 08:51:56 442104] Archiving /home/melissa/sven/scripts/mydb_minimal/src/usr/include/x86_64-linux-gnu/bits/uintn-identity.h
+[E 08:51:56 442104] Archiving /home/melissa/sven/scripts/mydb_minimal/src/usr/include/x86_64-linux-gnu/sys/select.h
+[E 08:51:56 442104] Archiving /home/melissa/sven/scripts/mydb_minimal/src/usr/include/x86_64-linux-gnu/bits/select.h
+[E 08:51:56 442104] Archiving /home/melissa/sven/scripts/mydb_minimal/src/usr/include/x86_64-linux-gnu/bits/types/sigset_t.h
+[E 08:51:56 442104] Archiving /home/melissa/sven/scripts/mydb_minimal/src/usr/include/x86_64-linux-gnu/bits/types/__sigset_t.h
+[E 08:51:56 442104] Archiving /home/melissa/sven/scripts/mydb_minimal/src/usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h
+[E 08:51:56 442104] Archiving /home/melissa/sven/scripts/mydb_minimal/src/usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h
+[E 08:51:56 442104] Archiving /home/melissa/sven/scripts/mydb_minimal/src/usr/include/x86_64-linux-gnu/bits/pthreadtypes.h
+[E 08:51:56 442104] Archiving /home/melissa/sven/scripts/mydb_minimal/src/usr/include/x86_64-linux-gnu/bits/thread-shared-types.h
+[E 08:51:56 442104] Archiving /home/melissa/sven/scripts/mydb_minimal/src/usr/include/x86_64-linux-gnu/bits/pthreadtypes-arch.h
+[E 08:51:56 442104] Already archived /home/melissa/sven/scripts/mydb_minimal/src/usr/include/x86_64-linux-gnu/bits/wordsize.h
+[E 08:51:56 442104] Archiving /home/melissa/sven/scripts/mydb_minimal/src/usr/include/x86_64-linux-gnu/bits/atomic_wide_counter.h
+[E 08:51:56 442104] Archiving /home/melissa/sven/scripts/mydb_minimal/src/usr/include/x86_64-linux-gnu/bits/struct_mutex.h
+[E 08:51:56 442104] Archiving /home/melissa/sven/scripts/mydb_minimal/src/usr/include/x86_64-linux-gnu/bits/struct_rwlock.h
+[E 08:51:56 442104] Archiving /home/melissa/sven/scripts/mydb_minimal/src/usr/include/alloca.h
+[E 08:51:56 442104] Already archived /home/melissa/sven/scripts/mydb_minimal/src/usr/lib/gcc/x86_64-linux-gnu/13/include/stddef.h
+[E 08:51:56 442104] Archiving /home/melissa/sven/scripts/mydb_minimal/src/usr/include/x86_64-linux-gnu/bits/stdlib-float.h
+[E 08:51:56 442104] Creating trap tarball /home/melissa/sven/scripts/mydb_minimal/trap/cpp/tarballs/home/melissa/sven/scripts/minimal_c_test/00.c.b6bd2bfc_0.trap.tar.br
+[E 08:51:56 442104] Emitting trap files for 00.c
+[E 08:51:56 442104] Opening existencedb in /home/melissa/sven/scripts/mydb_minimal/working/existencedb/db
+[E 08:51:56 442104] Warning[extractor-c++]: In index_attribute_arg: Unknown kind 5.
+[E 08:51:56 442104] Warning[extractor-c++]: In index_attribute_arg: Unknown kind 5.
+[E 08:51:56 442104] Warning[extractor-c++]: In index_attribute_arg: Unknown kind 5.
+[E 08:51:56 442104] Warning[extractor-c++]: In index_attribute_arg: Unknown kind 5.
+[E 08:51:56 442104] Warning[extractor-c++]: In index_attribute_arg: Unknown kind 5.
+[E 08:51:56 442104] Warning[extractor-c++]: In index_attribute_arg: Unknown kind 5.
+[E 08:51:56 442104] Warning[extractor-c++]: In index_attribute_arg: Unknown kind 5.
+[E 08:51:56 442104] Warning[extractor-c++]: In index_attribute_arg: Unknown kind 5.
+[E 08:51:56 442104] Warning[extractor-c++]: In index_attribute_arg: Unknown kind 5.
+[E 08:51:56 442104] Warning[extractor-c++]: In index_attribute_arg: Unknown kind 5.
+[E 08:51:56 442104] Wrote 60 files to /home/melissa/sven/scripts/mydb_minimal/trap/cpp/tarballs/home/melissa/sven/scripts/minimal_c_test/00.c.b6bd2bfc_0.trap.tar.br
+[E 08:51:56 442104] Finished compilation TRAP /home/melissa/sven/scripts/mydb_minimal/trap/cpp/compilations/57/38598390_0.trap.br
+[E 08:51:56 442104] Marking C compilation as happened.
+[E 08:51:56 442104] Setting tag c-compilation-happened
+[E 08:51:56 442104] Starting from CODEQL_TRACER_DB_ID 000000000006BEF6_0000000000000001
+[E 08:51:56 442104] Locking DB /home/melissa/sven/scripts/mydb_minimal/working/tags.db
+[E 08:51:56 442104] Locked DB /home/melissa/sven/scripts/mydb_minimal/working/tags.db
+[E 08:51:56 442104] Set tag for 000000000006BEF6_0000000000000001
+[E 08:51:56 442104] Set tag for 000000000006BEF4_0000000000000001
+[E 08:51:56 442104] Set tag for 000000000006BEF1_0000000000000003
+[E 08:51:56 442104] Set tag for 000000000006BEF1_0000000000000002
+[E 08:51:56 442104] Set tag for root
+[E 08:51:56 442104] Unlocking DB
+[E 08:51:56 442104] Unlocked DB
+[T 08:51:56 442102] Extractor /home/melissa/sven/codeql/cpp/tools/linux64/extractor terminated with exit code 0.
+[T 08:51:56 442157] Initializing tracer.
+[T 08:51:56 442157] Initialising tags...
+[T 08:51:56 442157] ID set to 000000000006BF2D_0000000000000001 (parent 000000000006BEF4_0000000000000001)
+[T 08:51:56 442157] ==== Candidate to intercept: as (canonical: as) ====
+[T 08:51:56 442157] Will try to resolve as in path /home/melissa/sonar-scanner/bin:/home/melissa/anaconda3/envs/sven-env/bin:/home/melissa/miniconda3/condabin:/home/melissa/.vscode-server/cli/servers/Stable-c306e94f98122556ca081f527b466015e1bc37b0/server/bin/remote-cli:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/melissa/.vscode-server/extensions/ms-python.debugpy-2025.14.1-linux-x64/bundled/scripts/noConfigScripts:/home/melissa/.vscode-server/data/User/globalStorage/github.copilot-chat/debugCommand:/home/melissa/codeql.
+[T 08:51:56 442157]  -> path lookup for as as /home/melissa/sonar-scanner/bin/as...
+[T 08:51:56 442157]  -> path lookup for as as /home/melissa/anaconda3/envs/sven-env/bin/as...
+[T 08:51:56 442157]  -> path lookup for as as /home/melissa/miniconda3/condabin/as...
+[T 08:51:56 442157]  -> path lookup for as as /home/melissa/.vscode-server/cli/servers/Stable-c306e94f98122556ca081f527b466015e1bc37b0/server/bin/remote-cli/as...
+[T 08:51:56 442157]  -> path lookup for as as /usr/local/sbin/as...
+[T 08:51:56 442157]  -> path lookup for as as /usr/local/bin/as...
+[T 08:51:56 442157]  -> path lookup for as as /usr/sbin/as...
+[T 08:51:56 442157]  -> path lookup for as as /usr/bin/as...
+[T 08:51:56 442157] Resolved barename as to /usr/bin/as
+[T 08:51:56 442157] Lua: === Intercepted call to /usr/bin/as ===
+[T 08:51:56 442157] Executing the following tracer actions:
+[T 08:51:56 442157] Tracer actions:
+[T 08:51:56 442157] pre_invocations(0)
+[T 08:51:56 442157] post_invocations(1)
+[T 08:51:56 442157] invocation: /home/melissa/sven/codeql/cpp/tools/linux64/extractor, args: [--assembler, --codeql-assembler-executable, /usr/bin/as, --64, -o, 00.o, /tmp/ccvdcYLe.s]
+[T 08:51:56 442157] trace_languages(1): [cpp]
+[T 08:51:56 442159] Attempting to switch stdout/stderr to 4...
+[T 08:51:56 442159] Initializing tracer.
+[T 08:51:56 442159] Initialising tags...
+[T 08:51:56 442159] ID set to 000000000006BF2F_0000000000000001 (parent 000000000006BF2D_0000000000000001)
+[E 08:51:56 442159] CodeQL C/C++ Extractor 2.11.1
+[E 08:51:56 442159] Current directory: /home/melissa/sven/scripts/minimal_c_test
+[E 08:51:56 442159] Command: /home/melissa/sven/codeql/cpp/tools/linux64/extractor --assembler --codeql-assembler-executable /usr/bin/as --64 -o 00.o /tmp/ccvdcYLe.s
+[T 08:51:56 442157] Extractor /home/melissa/sven/codeql/cpp/tools/linux64/extractor terminated with exit code 0.
+[T 08:51:56 442160] Attempting to switch stdout/stderr to 4...
+[T 08:51:56 442160] Initializing tracer.
+[T 08:51:56 442160] Initialising tags...
+[T 08:51:56 442160] ID set to 000000000006BF30_0000000000000001 (parent 000000000006BEF4_0000000000000001)
+[E 08:51:56 442160] CodeQL C/C++ Extractor 2.11.1
+[E 08:51:56 442160] Current directory: /home/melissa/sven/scripts/minimal_c_test
+[E 08:51:56 442160] Command: /home/melissa/sven/codeql/cpp/tools/linux64/extractor --mimic /usr/bin/x86_64-linux-gnu-gcc-13 -c 00.c -o 00.o
+[T 08:51:56 442161] Initializing tracer.
+[T 08:51:56 442161] Initialising tags...
+[T 08:51:56 442161] ID set to 000000000006BF31_0000000000000001 (parent 000000000006BF30_0000000000000001)
+[T 08:51:56 442161] ==== Candidate to intercept: /usr/bin/x86_64-linux-gnu-gcc-13 (canonical: /usr/bin/x86_64-linux-gnu-gcc-13) ====
+[T 08:51:56 442161] Lua: === Intercepted call to /usr/bin/x86_64-linux-gnu-gcc-13 ===
+[T 08:51:56 442161] Executing the following tracer actions:
+[T 08:51:56 442161] Tracer actions:
+[T 08:51:56 442161] pre_invocations(0)
+[T 08:51:56 442161] post_invocations(1)
+[T 08:51:56 442161] invocation: /home/melissa/sven/codeql/cpp/tools/linux64/extractor, args: [--mimic, /usr/bin/x86_64-linux-gnu-gcc-13, --version]
+[T 08:51:56 442161] trace_languages(1): [cpp]
+[T 08:51:56 442163] Attempting to switch stdout/stderr to 7...
+[T 08:51:56 442163] Initializing tracer.
+[T 08:51:56 442163] Initialising tags...
+[T 08:51:56 442163] ID set to 000000000006BF33_0000000000000001 (parent 000000000006BF31_0000000000000001)
+[E 08:51:56 442163] Mimicry classification suppression detected; exiting.
+[T 08:51:56 442161] Extractor /home/melissa/sven/codeql/cpp/tools/linux64/extractor terminated with exit code 0.
+[T 08:51:56 442164] Initializing tracer.
+[T 08:51:56 442164] Initialising tags...
+[T 08:51:56 442164] ID set to 000000000006BF34_0000000000000001 (parent 000000000006BF30_0000000000000001)
+[T 08:51:56 442164] ==== Candidate to intercept: /usr/bin/x86_64-linux-gnu-gcc-13 (canonical: /usr/bin/x86_64-linux-gnu-gcc-13) ====
+[T 08:51:56 442164] Lua: === Intercepted call to /usr/bin/x86_64-linux-gnu-gcc-13 ===
+[T 08:51:56 442164] Executing the following tracer actions:
+[T 08:51:56 442164] Tracer actions:
+[T 08:51:56 442164] pre_invocations(0)
+[T 08:51:56 442164] post_invocations(1)
+[T 08:51:56 442164] invocation: /home/melissa/sven/codeql/cpp/tools/linux64/extractor, args: [--mimic, /usr/bin/x86_64-linux-gnu-gcc-13, --help]
+[T 08:51:56 442164] trace_languages(1): [cpp]
+[T 08:51:56 442166] Attempting to switch stdout/stderr to 7...
+[T 08:51:56 442166] Initializing tracer.
+[T 08:51:56 442166] Initialising tags...
+[T 08:51:56 442166] ID set to 000000000006BF36_0000000000000001 (parent 000000000006BF34_0000000000000001)
+[E 08:51:56 442166] Mimicry classification suppression detected; exiting.
+[T 08:51:56 442164] Extractor /home/melissa/sven/codeql/cpp/tools/linux64/extractor terminated with exit code 0.
+[T 08:51:56 442167] Initializing tracer.
+[T 08:51:56 442167] Initialising tags...
+[T 08:51:56 442167] ID set to 000000000006BF37_0000000000000001 (parent 000000000006BF30_0000000000000001)
+[T 08:51:56 442167] ==== Candidate to intercept: /usr/bin/x86_64-linux-gnu-gcc-13 (canonical: /usr/bin/x86_64-linux-gnu-gcc-13) ====
+[T 08:51:56 442167] Lua: === Intercepted call to /usr/bin/x86_64-linux-gnu-gcc-13 ===
+[T 08:51:56 442167] Executing the following tracer actions:
+[T 08:51:56 442167] Tracer actions:
+[T 08:51:56 442167] pre_invocations(0)
+[T 08:51:56 442167] post_invocations(1)
+[T 08:51:56 442167] invocation: /home/melissa/sven/codeql/cpp/tools/linux64/extractor, args: [--mimic, /usr/bin/x86_64-linux-gnu-gcc-13, -nostdinc, -o, /home/melissa/sven/scripts/mydb_minimal/working/tmp//semmle_2_442160_171913.o, -c, /home/melissa/sven/scripts/mydb_minimal/working/tmp//semmle_1_442160_171803.c]
+[T 08:51:56 442167] trace_languages(1): [cpp]
+[T 08:51:56 442169] Initializing tracer.
+[T 08:51:56 442169] Initialising tags...
+[T 08:51:56 442169] ID set to 000000000006BF39_0000000000000001 (parent 000000000006BF37_0000000000000001)
+[T 08:51:56 442169] ==== Candidate to intercept: /usr/libexec/gcc/x86_64-linux-gnu/13/cc1 (canonical: /usr/libexec/gcc/x86_64-linux-gnu/13/cc1) ====
+[T 08:51:56 442169] Lua: === Intercepted call to /usr/libexec/gcc/x86_64-linux-gnu/13/cc1 ===
+[T 08:51:56 442169] Executing the following tracer actions:
+[T 08:51:56 442169] Tracer actions:
+[T 08:51:56 442169] pre_invocations(0)
+[T 08:51:56 442169] post_invocations(1)
+[T 08:51:56 442169] invocation: /home/melissa/sven/codeql/cpp/tools/linux64/extractor, args: [--mimic, /usr/libexec/gcc/x86_64-linux-gnu/13/cc1, -quiet, -nostdinc, -imultiarch, x86_64-linux-gnu, /home/melissa/sven/scripts/mydb_minimal/working/tmp//semmle_1_442160_171803.c, -quiet, -dumpdir, /home/melissa/sven/scripts/mydb_minimal/working/tmp//, -dumpbase, semmle_2_442160_171913.c, -dumpbase-ext, .c, -mtune=generic, -march=x86-64, -fasynchronous-unwind-tables, -fstack-protector-strong, -Wformat, -Wformat-security, -fstack-clash-protection, -fcf-protection, -o, /tmp/ccrzDz8b.s]
+[T 08:51:56 442169] trace_languages(1): [cpp]
+[T 08:51:56 442172] Attempting to switch stdout/stderr to 7...
+[T 08:51:56 442172] Initializing tracer.
+[T 08:51:56 442172] Initialising tags...
+[T 08:51:56 442172] ID set to 000000000006BF3C_0000000000000001 (parent 000000000006BF39_0000000000000001)
+[E 08:51:56 442172] Mimicry classification suppression detected; exiting.
+[T 08:51:56 442169] Extractor /home/melissa/sven/codeql/cpp/tools/linux64/extractor terminated with exit code 0.
+[T 08:51:56 442173] Initializing tracer.
+[T 08:51:56 442173] Initialising tags...
+[T 08:51:56 442173] ID set to 000000000006BF3D_0000000000000001 (parent 000000000006BF37_0000000000000001)
+[T 08:51:56 442173] ==== Candidate to intercept: as (canonical: as) ====
+[T 08:51:56 442173] Will try to resolve as in path /home/melissa/sonar-scanner/bin:/home/melissa/anaconda3/envs/sven-env/bin:/home/melissa/miniconda3/condabin:/home/melissa/.vscode-server/cli/servers/Stable-c306e94f98122556ca081f527b466015e1bc37b0/server/bin/remote-cli:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/melissa/.vscode-server/extensions/ms-python.debugpy-2025.14.1-linux-x64/bundled/scripts/noConfigScripts:/home/melissa/.vscode-server/data/User/globalStorage/github.copilot-chat/debugCommand:/home/melissa/codeql.
+[T 08:51:56 442173]  -> path lookup for as as /home/melissa/sonar-scanner/bin/as...
+[T 08:51:56 442173]  -> path lookup for as as /home/melissa/anaconda3/envs/sven-env/bin/as...
+[T 08:51:56 442173]  -> path lookup for as as /home/melissa/miniconda3/condabin/as...
+[T 08:51:56 442173]  -> path lookup for as as /home/melissa/.vscode-server/cli/servers/Stable-c306e94f98122556ca081f527b466015e1bc37b0/server/bin/remote-cli/as...
+[T 08:51:56 442173]  -> path lookup for as as /usr/local/sbin/as...
+[T 08:51:56 442173]  -> path lookup for as as /usr/local/bin/as...
+[T 08:51:56 442173]  -> path lookup for as as /usr/sbin/as...
+[T 08:51:56 442173]  -> path lookup for as as /usr/bin/as...
+[T 08:51:56 442173] Resolved barename as to /usr/bin/as
+[T 08:51:56 442173] Lua: === Intercepted call to /usr/bin/as ===
+[T 08:51:56 442173] Executing the following tracer actions:
+[T 08:51:56 442173] Tracer actions:
+[T 08:51:56 442173] pre_invocations(0)
+[T 08:51:56 442173] post_invocations(1)
+[T 08:51:56 442173] invocation: /home/melissa/sven/codeql/cpp/tools/linux64/extractor, args: [--assembler, --codeql-assembler-executable, /usr/bin/as, --64, -o, /home/melissa/sven/scripts/mydb_minimal/working/tmp//semmle_2_442160_171913.o, /tmp/ccrzDz8b.s]
+[T 08:51:56 442173] trace_languages(1): [cpp]
+[T 08:51:56 442175] Attempting to switch stdout/stderr to 7...
+[T 08:51:56 442175] Initializing tracer.
+[T 08:51:56 442175] Initialising tags...
+[T 08:51:56 442175] ID set to 000000000006BF3F_0000000000000001 (parent 000000000006BF3D_0000000000000001)
+[E 08:51:56 442175] Mimicry classification suppression detected; exiting.
+[T 08:51:56 442173] Extractor /home/melissa/sven/codeql/cpp/tools/linux64/extractor terminated with exit code 0.
+[T 08:51:56 442176] Attempting to switch stdout/stderr to 7...
+[T 08:51:56 442176] Initializing tracer.
+[T 08:51:56 442176] Initialising tags...
+[T 08:51:56 442176] ID set to 000000000006BF40_0000000000000001 (parent 000000000006BF37_0000000000000001)
+[E 08:51:56 442176] Mimicry classification suppression detected; exiting.
+[T 08:51:56 442167] Extractor /home/melissa/sven/codeql/cpp/tools/linux64/extractor terminated with exit code 0.
+[T 08:51:56 442177] Initializing tracer.
+[T 08:51:56 442177] Initialising tags...
+[T 08:51:56 442177] ID set to 000000000006BF41_0000000000000001 (parent 000000000006BF30_0000000000000001)
+[T 08:51:56 442177] ==== Candidate to intercept: /usr/bin/x86_64-linux-gnu-gcc-13 (canonical: /usr/bin/x86_64-linux-gnu-gcc-13) ====
+[T 08:51:56 442177] Lua: === Intercepted call to /usr/bin/x86_64-linux-gnu-gcc-13 ===
+[T 08:51:56 442177] Executing the following tracer actions:
+[T 08:51:56 442177] Tracer actions:
+[T 08:51:56 442177] pre_invocations(0)
+[T 08:51:56 442177] post_invocations(1)
+[T 08:51:56 442177] invocation: /home/melissa/sven/codeql/cpp/tools/linux64/extractor, args: [--mimic, /usr/bin/x86_64-linux-gnu-gcc-13, -nostdinc, -o, /home/melissa/sven/scripts/mydb_minimal/working/tmp//semmle_2_442160_171913.o, -c, /home/melissa/sven/scripts/mydb_minimal/working/tmp//semmle_1_442160_171803.c, -v, -iwithprefix, 80AD44EC-F542-4CCF-8C9F-328EB87D7D35]
+[T 08:51:56 442177] trace_languages(1): [cpp]
+[T 08:51:56 442179] Initializing tracer.
+[T 08:51:56 442179] Initialising tags...
+[T 08:51:56 442179] ID set to 000000000006BF43_0000000000000001 (parent 000000000006BF41_0000000000000001)
+[T 08:51:56 442179] ==== Candidate to intercept: /usr/libexec/gcc/x86_64-linux-gnu/13/cc1 (canonical: /usr/libexec/gcc/x86_64-linux-gnu/13/cc1) ====
+[T 08:51:56 442179] Lua: === Intercepted call to /usr/libexec/gcc/x86_64-linux-gnu/13/cc1 ===
+[T 08:51:56 442179] Executing the following tracer actions:
+[T 08:51:56 442179] Tracer actions:
+[T 08:51:56 442179] pre_invocations(0)
+[T 08:51:56 442179] post_invocations(1)
+[T 08:51:56 442179] invocation: /home/melissa/sven/codeql/cpp/tools/linux64/extractor, args: [--mimic, /usr/libexec/gcc/x86_64-linux-gnu/13/cc1, -quiet, -nostdinc, -v, -imultiarch, x86_64-linux-gnu, -iwithprefix, 80AD44EC-F542-4CCF-8C9F-328EB87D7D35, /home/melissa/sven/scripts/mydb_minimal/working/tmp//semmle_1_442160_171803.c, -quiet, -dumpdir, /home/melissa/sven/scripts/mydb_minimal/working/tmp//, -dumpbase, semmle_2_442160_171913.c, -dumpbase-ext, .c, -mtune=generic, -march=x86-64, -version, -fasynchronous-unwind-tables, -fstack-protector-strong, -Wformat, -Wformat-security, -fstack-clash-protection, -fcf-protection, -o, /tmp/cc3jJZY8.s]
+[T 08:51:56 442179] trace_languages(1): [cpp]
+[T 08:51:56 442181] Attempting to switch stdout/stderr to 7...
+[T 08:51:56 442181] Initializing tracer.
+[T 08:51:56 442181] Initialising tags...
+[T 08:51:56 442181] ID set to 000000000006BF45_0000000000000001 (parent 000000000006BF43_0000000000000001)
+[E 08:51:56 442181] Mimicry classification suppression detected; exiting.
+[T 08:51:56 442179] Extractor /home/melissa/sven/codeql/cpp/tools/linux64/extractor terminated with exit code 0.
+[T 08:51:56 442182] Initializing tracer.
+[T 08:51:56 442182] Initialising tags...
+[T 08:51:56 442182] ID set to 000000000006BF46_0000000000000001 (parent 000000000006BF41_0000000000000001)
+[T 08:51:56 442182] ==== Candidate to intercept: as (canonical: as) ====
+[T 08:51:56 442182] Will try to resolve as in path /home/melissa/sonar-scanner/bin:/home/melissa/anaconda3/envs/sven-env/bin:/home/melissa/miniconda3/condabin:/home/melissa/.vscode-server/cli/servers/Stable-c306e94f98122556ca081f527b466015e1bc37b0/server/bin/remote-cli:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/melissa/.vscode-server/extensions/ms-python.debugpy-2025.14.1-linux-x64/bundled/scripts/noConfigScripts:/home/melissa/.vscode-server/data/User/globalStorage/github.copilot-chat/debugCommand:/home/melissa/codeql.
+[T 08:51:56 442182]  -> path lookup for as as /home/melissa/sonar-scanner/bin/as...
+[T 08:51:56 442182]  -> path lookup for as as /home/melissa/anaconda3/envs/sven-env/bin/as...
+[T 08:51:56 442182]  -> path lookup for as as /home/melissa/miniconda3/condabin/as...
+[T 08:51:56 442182]  -> path lookup for as as /home/melissa/.vscode-server/cli/servers/Stable-c306e94f98122556ca081f527b466015e1bc37b0/server/bin/remote-cli/as...
+[T 08:51:56 442182]  -> path lookup for as as /usr/local/sbin/as...
+[T 08:51:56 442182]  -> path lookup for as as /usr/local/bin/as...
+[T 08:51:56 442182]  -> path lookup for as as /usr/sbin/as...
+[T 08:51:56 442182]  -> path lookup for as as /usr/bin/as...
+[T 08:51:56 442182] Resolved barename as to /usr/bin/as
+[T 08:51:56 442182] Lua: === Intercepted call to /usr/bin/as ===
+[T 08:51:56 442182] Executing the following tracer actions:
+[T 08:51:56 442182] Tracer actions:
+[T 08:51:56 442182] pre_invocations(0)
+[T 08:51:56 442182] post_invocations(1)
+[T 08:51:56 442182] invocation: /home/melissa/sven/codeql/cpp/tools/linux64/extractor, args: [--assembler, --codeql-assembler-executable, /usr/bin/as, -v, --64, -o, /home/melissa/sven/scripts/mydb_minimal/working/tmp//semmle_2_442160_171913.o, /tmp/cc3jJZY8.s]
+[T 08:51:56 442182] trace_languages(1): [cpp]
+[T 08:51:56 442184] Attempting to switch stdout/stderr to 7...
+[T 08:51:56 442184] Initializing tracer.
+[T 08:51:56 442184] Initialising tags...
+[T 08:51:56 442184] ID set to 000000000006BF48_0000000000000001 (parent 000000000006BF46_0000000000000001)
+[E 08:51:56 442184] Mimicry classification suppression detected; exiting.
+[T 08:51:56 442182] Extractor /home/melissa/sven/codeql/cpp/tools/linux64/extractor terminated with exit code 0.
+[T 08:51:56 442185] Attempting to switch stdout/stderr to 7...
+[T 08:51:56 442185] Initializing tracer.
+[T 08:51:56 442185] Initialising tags...
+[T 08:51:56 442185] ID set to 000000000006BF49_0000000000000001 (parent 000000000006BF41_0000000000000001)
+[E 08:51:56 442185] Mimicry classification suppression detected; exiting.
+[T 08:51:56 442177] Extractor /home/melissa/sven/codeql/cpp/tools/linux64/extractor terminated with exit code 0.
+[T 08:51:56 442186] Initializing tracer.
+[T 08:51:56 442186] Initialising tags...
+[T 08:51:56 442186] ID set to 000000000006BF4A_0000000000000001 (parent 000000000006BF30_0000000000000001)
+[T 08:51:56 442186] ==== Candidate to intercept: /usr/bin/x86_64-linux-gnu-gcc-13 (canonical: /usr/bin/x86_64-linux-gnu-gcc-13) ====
+[T 08:51:56 442186] Lua: === Intercepted call to /usr/bin/x86_64-linux-gnu-gcc-13 ===
+[T 08:51:56 442186] Executing the following tracer actions:
+[T 08:51:56 442186] Tracer actions:
+[T 08:51:56 442186] pre_invocations(0)
+[T 08:51:56 442186] post_invocations(1)
+[T 08:51:56 442186] invocation: /home/melissa/sven/codeql/cpp/tools/linux64/extractor, args: [--mimic, /usr/bin/x86_64-linux-gnu-gcc-13, -nostdinc, -o, /home/melissa/sven/scripts/mydb_minimal/working/tmp//semmle_4_442160_289248.o, -c, /home/melissa/sven/scripts/mydb_minimal/working/tmp//semmle_3_442160_289135.c]
+[T 08:51:56 442186] trace_languages(1): [cpp]
+[T 08:51:56 442188] Initializing tracer.
+[T 08:51:56 442188] Initialising tags...
+[T 08:51:56 442188] ID set to 000000000006BF4C_0000000000000001 (parent 000000000006BF4A_0000000000000001)
+[T 08:51:56 442188] ==== Candidate to intercept: /usr/libexec/gcc/x86_64-linux-gnu/13/cc1 (canonical: /usr/libexec/gcc/x86_64-linux-gnu/13/cc1) ====
+[T 08:51:56 442188] Lua: === Intercepted call to /usr/libexec/gcc/x86_64-linux-gnu/13/cc1 ===
+[T 08:51:56 442188] Executing the following tracer actions:
+[T 08:51:56 442188] Tracer actions:
+[T 08:51:56 442188] pre_invocations(0)
+[T 08:51:56 442188] post_invocations(1)
+[T 08:51:56 442188] invocation: /home/melissa/sven/codeql/cpp/tools/linux64/extractor, args: [--mimic, /usr/libexec/gcc/x86_64-linux-gnu/13/cc1, -quiet, -nostdinc, -imultiarch, x86_64-linux-gnu, /home/melissa/sven/scripts/mydb_minimal/working/tmp//semmle_3_442160_289135.c, -quiet, -dumpdir, /home/melissa/sven/scripts/mydb_minimal/working/tmp//, -dumpbase, semmle_4_442160_289248.c, -dumpbase-ext, .c, -mtune=generic, -march=x86-64, -fasynchronous-unwind-tables, -fstack-protector-strong, -Wformat, -Wformat-security, -fstack-clash-protection, -fcf-protection, -o, /tmp/cc6XOKIE.s]
+[T 08:51:56 442188] trace_languages(1): [cpp]
+[T 08:51:56 442190] Attempting to switch stdout/stderr to 7...
+[T 08:51:56 442190] Initializing tracer.
+[T 08:51:56 442190] Initialising tags...
+[T 08:51:56 442190] ID set to 000000000006BF4E_0000000000000001 (parent 000000000006BF4C_0000000000000001)
+[E 08:51:56 442190] Mimicry classification suppression detected; exiting.
+[T 08:51:56 442188] Extractor /home/melissa/sven/codeql/cpp/tools/linux64/extractor terminated with exit code 0.
+[T 08:51:56 442191] Attempting to switch stdout/stderr to 7...
+[T 08:51:56 442191] Initializing tracer.
+[T 08:51:56 442191] Initialising tags...
+[T 08:51:56 442191] ID set to 000000000006BF4F_0000000000000001 (parent 000000000006BF4A_0000000000000001)
+[E 08:51:56 442191] Mimicry classification suppression detected; exiting.
+[T 08:51:56 442186] Extractor /home/melissa/sven/codeql/cpp/tools/linux64/extractor terminated with exit code 0.
+[E 08:51:56 442160] Checking whether C compilation already happened.
+[E 08:51:56 442160] Checking for tag c-compilation-happened
+[E 08:51:56 442160] Checking CODEQL_TRACER_DB_ID 000000000006BEF4_0000000000000001
+[E 08:51:56 442160] Locking DB /home/melissa/sven/scripts/mydb_minimal/working/tags.db
+[E 08:51:56 442160] Locked DB /home/melissa/sven/scripts/mydb_minimal/working/tags.db
+[E 08:51:56 442160] Unlocking DB
+[E 08:51:56 442160] Unlocked DB
+[E 08:51:56 442160] Exiting as C compilation already happened.
+[T 08:51:56 442100] Extractor /home/melissa/sven/codeql/cpp/tools/linux64/extractor terminated with exit code 0.

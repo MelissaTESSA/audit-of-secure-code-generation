@@ -1,0 +1,135 @@
+[2025-11-06 07:43:17] This is codeql execute queries -J-Xmx15344M --off-heap-ram=15344 --verbosity=progress --logdir=/home/melissa/sven/scripts/mydb/log --evaluator-log-level=5 --insecurely-execute-ml-model-checksums= --warnings=show --additional-packs=/home/melissa/.codeql/packages/codeql --qlconfig-file=/home/melissa/sven/scripts/qlconfig.yml --no-rerun --output=/home/melissa/sven/scripts/mydb/results -- /home/melissa/sven/scripts/mydb/db-cpp ../data_eval/trained/cwe-125/0-c/cwe_125_my-1.ql
+[2025-11-06 07:43:17] Calling plumbing command: codeql resolve queries --additional-packs=/home/melissa/.codeql/packages/codeql --qlconfig-file=/home/melissa/sven/scripts/qlconfig.yml --format=json -- ../data_eval/trained/cwe-125/0-c/cwe_125_my-1.ql
+[2025-11-06 07:43:18] [PROGRESS] resolve queries> Recording pack reference cwe125 at /home/melissa/sven/data_eval/trained/cwe-125/0-c.
+[2025-11-06 07:43:18] Plumbing command codeql resolve queries completed:
+                      [
+                        "/home/melissa/sven/scripts/../data_eval/trained/cwe-125/0-c/cwe_125_my-1.ql"
+                      ]
+[2025-11-06 07:43:18] Refusing fancy output: The terminal is not an xterm: screen.xterm-256color
+[2025-11-06 07:43:18] Creating executor with 1 threads.
+[2025-11-06 07:43:18] Calling plumbing command: codeql resolve extensions --additional-packs=/home/melissa/.codeql/packages/codeql --qlconfig-file=/home/melissa/sven/scripts/qlconfig.yml --insecurely-execute-ml-model-checksums= ../data_eval/trained/cwe-125/0-c/cwe_125_my-1.ql
+[2025-11-06 07:43:18] Calling plumbing command: codeql resolve queries --additional-packs=/home/melissa/.codeql/packages/codeql --qlconfig-file=/home/melissa/sven/scripts/qlconfig.yml --format startingpacks -- ../data_eval/trained/cwe-125/0-c/cwe_125_my-1.ql
+[2025-11-06 07:43:18] [PROGRESS] resolve queries> Recording pack reference cwe125 at /home/melissa/sven/data_eval/trained/cwe-125/0-c.
+[2025-11-06 07:43:18] Plumbing command codeql resolve queries completed:
+                      [
+                        "/home/melissa/sven/data_eval/trained/cwe-125/0-c"
+                      ]
+[2025-11-06 07:43:18] Plumbing command codeql resolve extensions completed:
+                      {
+                        "models" : [ ],
+                        "data" : { }
+                      }
+[2025-11-06 07:43:18] [PROGRESS] execute queries> Did not find any ML models.
+[2025-11-06 07:43:18] [SPAMMIER] execute queries> Data extensions for query cwe_125_my-1.ql in ../data_eval/trained/cwe-125/0-c/cwe_125_my-1.ql:
+                      {}
+[2025-11-06 07:43:18] Calling plumbing command: codeql resolve library-path --additional-packs=/home/melissa/.codeql/packages/codeql --qlconfig-file=/home/melissa/sven/scripts/qlconfig.yml --query=/home/melissa/sven/scripts/../data_eval/trained/cwe-125/0-c/cwe_125_my-1.ql --format=json
+[2025-11-06 07:43:18] [DETAILS] resolve library-path> Resolving query at normalized path /home/melissa/sven/data_eval/trained/cwe-125/0-c/cwe_125_my-1.ql.
+[2025-11-06 07:43:18] [DETAILS] resolve library-path> Found enclosing pack 'cwe125' at /home/melissa/sven/data_eval/trained/cwe-125/0-c.
+[2025-11-06 07:43:18] [DETAILS] resolve library-path> Adding compilation cache at /home/melissa/sven/data_eval/trained/cwe-125/0-c/.cache.
+[2025-11-06 07:43:18] [DETAILS] resolve library-path> Resolving library dependencies from /home/melissa/sven/data_eval/trained/cwe-125/0-c/qlpack.yml.
+[2025-11-06 07:43:18] [DETAILS] resolve library-path> QL pack dependencies for /home/melissa/sven/data_eval/trained/cwe-125/0-c resolved OK.
+[2025-11-06 07:43:18] [DETAILS] resolve library-path> Found dbscheme through QL packs: /home/melissa/.codeql/packages/codeql/cpp-all/5.5.0/semmlecode.cpp.dbscheme.
+[2025-11-06 07:43:18] Plumbing command codeql resolve library-path completed:
+                      {
+                        "libraryPath" : [
+                          "/home/melissa/sven/data_eval/trained/cwe-125/0-c",
+                          "/home/melissa/.codeql/packages/codeql/cpp-all/5.5.0",
+                          "/home/melissa/.codeql/packages/codeql/dataflow/2.0.14",
+                          "/home/melissa/.codeql/packages/codeql/mad/1.0.30",
+                          "/home/melissa/.codeql/packages/codeql/quantum/0.0.8",
+                          "/home/melissa/.codeql/packages/codeql/rangeanalysis/1.0.30",
+                          "/home/melissa/.codeql/packages/codeql/ssa/2.0.6",
+                          "/home/melissa/.codeql/packages/codeql/tutorial/1.0.30",
+                          "/home/melissa/.codeql/packages/codeql/typeflow/1.0.30",
+                          "/home/melissa/.codeql/packages/codeql/util/2.0.17",
+                          "/home/melissa/.codeql/packages/codeql/xml/1.0.30",
+                          "/home/melissa/.codeql/packages/codeql/controlflow/2.0.14",
+                          "/home/melissa/.codeql/packages/codeql/typetracking/2.0.14"
+                        ],
+                        "dbscheme" : "/home/melissa/.codeql/packages/codeql/cpp-all/5.5.0/semmlecode.cpp.dbscheme",
+                        "compilationCache" : [
+                          "/home/melissa/sven/data_eval/trained/cwe-125/0-c/.cache"
+                        ],
+                        "relativeName" : "cwe125/cwe_125_my-1.ql",
+                        "qlPackName" : "cwe125"
+                      }
+[2025-11-06 07:43:18] [PROGRESS] execute queries> Compiling query plan for /home/melissa/sven/scripts/../data_eval/trained/cwe-125/0-c/cwe_125_my-1.ql.
+[2025-11-06 07:43:18] [DETAILS] execute queries> Resolving imports for /home/melissa/sven/scripts/../data_eval/trained/cwe-125/0-c/cwe_125_my-1.ql.
+[2025-11-06 07:43:18] Resolved file set for /home/melissa/sven/scripts/../data_eval/trained/cwe-125/0-c/cwe_125_my-1.ql hashes to 93092951e26b4b0efda506e7501a785c8ba2b526.
+[2025-11-06 07:43:18] [DETAILS] execute queries> Checking QL for /home/melissa/sven/scripts/../data_eval/trained/cwe-125/0-c/cwe_125_my-1.ql.
+[2025-11-06 07:43:19] ExternalModuleBindingPass ...
+[2025-11-06 07:43:20] ExternalModuleBindingPass time: 00:00.981
+[2025-11-06 07:43:20] QLPredicateSynthesiser ...
+[2025-11-06 07:43:20] QLPredicateSynthesiser time: 00:00.024
+[2025-11-06 07:43:20] DeclarationBindingPass ...
+[2025-11-06 07:43:20] DeclarationBindingPass time: 00:00.071
+[2025-11-06 07:43:20] Fixed point time ...
+[2025-11-06 07:43:20] Fixed point time time: 00:00.422
+[2025-11-06 07:43:20] ReferenceBindingPass ...
+[2025-11-06 07:43:20] ReferenceBindingPass time: 00:00.052
+[2025-11-06 07:43:20] ReferenceBindingCheck ...
+[2025-11-06 07:43:20] ReferenceBindingCheck time: 00:00.112
+[2025-11-06 07:43:20] PredicateBodyBindingPass ...
+[2025-11-06 07:43:21] PredicateBodyBindingPass time: 00:00.376
+[2025-11-06 07:43:21] LanguagePragmaPropagationPass ...
+[2025-11-06 07:43:21] LanguagePragmaPropagationPass time: 00:00.025
+[2025-11-06 07:43:21] Ambiguity checks ...
+[2025-11-06 07:43:21] Ambiguity checks time: 00:00.114
+[2025-11-06 07:43:21] Ql checks ...
+[2025-11-06 07:43:21] [ERROR] Exception collected asynchronously; saving it while cancelling everything
+                              java.lang.IndexOutOfBoundsException: Index 2 out of bounds for length 2
+                              	at java.base/jdk.internal.util.Preconditions.outOfBounds(Unknown Source)
+                              	at java.base/jdk.internal.util.Preconditions.outOfBoundsCheckIndex(Unknown Source)
+                              	at java.base/jdk.internal.util.Preconditions.checkIndex(Unknown Source)
+                              	at java.base/java.util.Objects.checkIndex(Unknown Source)
+                              	at java.base/java.util.ArrayList.get(Unknown Source)
+                              	at com.semmle.frontend.compiler.rangerestriction.RangeRestrictionChecker.handlePredicate(RangeRestrictionChecker.java:1085)
+                              	at java.base/java.util.ArrayList.forEach(Unknown Source)
+                              	at com.semmle.frontend.compiler.rangerestriction.RangeRestrictionChecker.visitModule(RangeRestrictionChecker.java:1406)
+                              	at java.base/java.util.ArrayList.forEach(Unknown Source)
+                              	at com.semmle.frontend.compiler.rangerestriction.RangeRestrictionChecker.visitModule(RangeRestrictionChecker.java:1404)
+                              	at com.semmle.frontend.compiler.rangerestriction.RangeRestrictionChecker.check(RangeRestrictionChecker.java:116)
+                              	at com.semmle.frontend.Binder.process(Binder.java:179)
+                              	at com.semmle.frontend.SimpleBinder.getBindingFor(SimpleBinder.java:43)
+                              	at com.semmle.frontend.Binder.getBindingFor(Binder.java:63)
+                              	at com.semmle.cli2.ql.CompilationCommon.lambda$compile$2(CompilationCommon.java:273)
+                              	at com.semmle.cli2.ql.CompilationCommon.compile(CompilationCommon.java:352)
+                              	at com.semmle.cli2.ql.CompilationCommon.compile(CompilationCommon.java:208)
+                              	at com.semmle.cli2.execute.ExecuteQueriesCommand.compileOrLoad(ExecuteQueriesCommand.java:536)
+                              	at com.semmle.cli2.execute.ExecuteQueriesCommand.lambda$executeSubcommand$2(ExecuteQueriesCommand.java:301)
+                              	at com.semmle.cli2.ql.Paralleliser$1.lambda$next$0(Paralleliser.java:68)
+                              	at com.semmle.util.concurrent.FutureUtils.supplyCompose(FutureUtils.java:217)
+                              	at com.semmle.cli2.ql.Paralleliser.lambda$startMoreJobs$1(Paralleliser.java:112)
+                              	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+                              	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+                              	at java.base/java.lang.Thread.run(Unknown Source)
+[2025-11-06 07:43:21] Sequence stamp origin is -5984371214395801002
+[2025-11-06 07:43:21] Pausing evaluation to close the cache at sequence stamp o+0
+[2025-11-06 07:43:21] The disk cache is freshly trimmed; leave it be.
+[2025-11-06 07:43:21] Unpausing evaluation
+[2025-11-06 07:43:21] Exception caught in async task: java.lang.IndexOutOfBoundsException: Index 2 out of bounds for length 2
+                      java.base/jdk.internal.util.Preconditions.outOfBounds(Unknown Source)
+                      java.base/jdk.internal.util.Preconditions.outOfBoundsCheckIndex(Unknown Source)
+                      java.base/jdk.internal.util.Preconditions.checkIndex(Unknown Source)
+                      java.base/java.util.Objects.checkIndex(Unknown Source)
+                      java.base/java.util.ArrayList.get(Unknown Source)
+                      com.semmle.frontend.compiler.rangerestriction.RangeRestrictionChecker.handlePredicate(RangeRestrictionChecker.java:1085)
+                      java.base/java.util.ArrayList.forEach(Unknown Source)
+                      com.semmle.frontend.compiler.rangerestriction.RangeRestrictionChecker.visitModule(RangeRestrictionChecker.java:1406)
+                      java.base/java.util.ArrayList.forEach(Unknown Source)
+                      com.semmle.frontend.compiler.rangerestriction.RangeRestrictionChecker.visitModule(RangeRestrictionChecker.java:1404)
+                      com.semmle.frontend.compiler.rangerestriction.RangeRestrictionChecker.check(RangeRestrictionChecker.java:116)
+                      com.semmle.frontend.Binder.process(Binder.java:179)
+                      com.semmle.frontend.SimpleBinder.getBindingFor(SimpleBinder.java:43)
+                      com.semmle.frontend.Binder.getBindingFor(Binder.java:63)
+                      com.semmle.cli2.ql.CompilationCommon.lambda$compile$2(CompilationCommon.java:273)
+                      com.semmle.cli2.ql.CompilationCommon.compile(CompilationCommon.java:352)
+                      com.semmle.cli2.ql.CompilationCommon.compile(CompilationCommon.java:208)
+                      com.semmle.cli2.execute.ExecuteQueriesCommand.compileOrLoad(ExecuteQueriesCommand.java:536)
+                      com.semmle.cli2.execute.ExecuteQueriesCommand.lambda$executeSubcommand$2(ExecuteQueriesCommand.java:301)
+                      com.semmle.cli2.ql.Paralleliser$1.lambda$next$0(Paralleliser.java:68)
+                      com.semmle.util.concurrent.FutureUtils.supplyCompose(FutureUtils.java:217)
+                      com.semmle.cli2.ql.Paralleliser.lambda$startMoreJobs$1(Paralleliser.java:112)
+                      java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+                      java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+                      java.base/java.lang.Thread.run(Unknown Source)

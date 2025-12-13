@@ -1,0 +1,15 @@
+[2025-11-06 07:45:04] This is codeql database analyze ./mydb /home/melissa/.codeql/packages/codeql/cpp-queries/1.4.7/Likely Bugs/Format/TooManyFormatArguments.ql --format=csv --output=too_many_format_args.csv --additional-packs=/home/melissa/.codeql/packages/codeql/
+[2025-11-06 07:45:04] Log file was started late.
+[2025-11-06 07:45:04] [PROGRESS] database analyze> Running queries.
+[2025-11-06 07:45:04] Running plumbing command: codeql database run-queries --evaluator-log-level=5 --insecurely-execute-ml-model-checksums= --warnings=show --additional-packs=/home/melissa/.codeql/packages/codeql --qlconfig-file=/home/melissa/sven/scripts/qlconfig.yml --no-rerun -- /home/melissa/sven/scripts/mydb /home/melissa/.codeql/packages/codeql/cpp-queries/1.4.7/Likely Bugs/Format/TooManyFormatArguments.ql
+[2025-11-06 07:45:04] Calling plumbing command: codeql resolve ram --format=json
+[2025-11-06 07:45:04] Plumbing command codeql resolve ram completed:
+                      [
+                        "-J-Xmx15344M",
+                        "--off-heap-ram=15344"
+                      ]
+[2025-11-06 07:45:04] Spawning plumbing command: execute queries -J-Xmx15344M --off-heap-ram=15344 --verbosity=progress --logdir=/home/melissa/sven/scripts/mydb/log --evaluator-log-level=5 --insecurely-execute-ml-model-checksums= --warnings=show --additional-packs=/home/melissa/.codeql/packages/codeql --qlconfig-file=/home/melissa/sven/scripts/qlconfig.yml --no-rerun --output=/home/melissa/sven/scripts/mydb/results -- /home/melissa/sven/scripts/mydb/db-cpp /home/melissa/.codeql/packages/codeql/cpp-queries/1.4.7/Likely Bugs/Format/TooManyFormatArguments.ql
+[2025-11-06 07:45:10] [ERROR] Spawned process exited abnormally (code 100; tried to run: [/home/melissa/sven/codeql/tools/linux64/java/bin/java, -Xmx15344M, -Djava.library.path=/usr/java/packages/lib:/usr/lib64:/lib64:/lib:/usr/lib, -cp, /home/melissa/sven/codeql/tools/codeql.jar, com.semmle.cli2.CodeQL, env_argv, execute, queries, -J-Xmx15344M, _, _, _, _, _, _, _, _, --no-rerun, _, --, /home/melissa/sven/scripts/mydb/db-cpp, _])
+[2025-11-06 07:45:10] Plumbing command codeql execute queries terminated with status 100.
+[2025-11-06 07:45:10] Plumbing command codeql database run-queries completed with status 100.
+[2025-11-06 07:45:10] Exiting with code 100

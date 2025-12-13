@@ -1,0 +1,185 @@
+[2025-11-06 07:28:50] This is codeql database create ./mydb --language=cpp --source-root ../experiments/sec_eval/sec-eval-2b-prefix/trained/cwe-125/0-c/sec_output
+[2025-11-06 07:28:50] Log file was started late.
+[2025-11-06 07:28:50] [PROGRESS] database create> Initializing database at /home/melissa/sven/scripts/mydb.
+[2025-11-06 07:28:50] Running plumbing command: codeql database init --language=cpp --source-root=/home/melissa/sven/experiments/sec_eval/sec-eval-2b-prefix/trained/cwe-125/0-c/sec_output --allow-missing-source-root=false --allow-already-existing -- /home/melissa/sven/scripts/mydb
+[2025-11-06 07:28:50] [PROGRESS] database init> Computing baseline information in /home/melissa/sven/experiments/sec_eval/sec-eval-2b-prefix/trained/cwe-125/0-c/sec_output
+[2025-11-06 07:28:50] [PROGRESS] database init> Resolving extractor cpp.
+[2025-11-06 07:28:50] Calling plumbing command: codeql resolve languages --format=json
+[2025-11-06 07:28:50] [DETAILS] resolve languages> Scanning for [codeql-extractor.yml] from /home/melissa/sven/codeql/.codeqlmanifest.json
+[2025-11-06 07:28:50] [DETAILS] resolve languages> Parsing /home/melissa/sven/codeql/go/codeql-extractor.yml.
+[2025-11-06 07:28:50] [DETAILS] resolve languages> Parsing /home/melissa/sven/codeql/python/codeql-extractor.yml.
+[2025-11-06 07:28:50] [DETAILS] resolve languages> Parsing /home/melissa/sven/codeql/csv/codeql-extractor.yml.
+[2025-11-06 07:28:50] [DETAILS] resolve languages> Parsing /home/melissa/sven/codeql/html/codeql-extractor.yml.
+[2025-11-06 07:28:50] [DETAILS] resolve languages> Parsing /home/melissa/sven/codeql/properties/codeql-extractor.yml.
+[2025-11-06 07:28:50] [DETAILS] resolve languages> Parsing /home/melissa/sven/codeql/xml/codeql-extractor.yml.
+[2025-11-06 07:28:51] [DETAILS] resolve languages> Parsing /home/melissa/sven/codeql/cpp/codeql-extractor.yml.
+[2025-11-06 07:28:51] [DETAILS] resolve languages> Parsing /home/melissa/sven/codeql/javascript/codeql-extractor.yml.
+[2025-11-06 07:28:51] [DETAILS] resolve languages> Parsing /home/melissa/sven/codeql/csharp/codeql-extractor.yml.
+[2025-11-06 07:28:51] [DETAILS] resolve languages> Parsing /home/melissa/sven/codeql/ruby/codeql-extractor.yml.
+[2025-11-06 07:28:51] [DETAILS] resolve languages> Parsing /home/melissa/sven/codeql/java/codeql-extractor.yml.
+[2025-11-06 07:28:51] Plumbing command codeql resolve languages completed:
+                      {
+                        "extractors" : {
+                          "go" : [
+                            {
+                              "extractor_root" : "/home/melissa/sven/codeql/go"
+                            }
+                          ],
+                          "python" : [
+                            {
+                              "extractor_root" : "/home/melissa/sven/codeql/python"
+                            }
+                          ],
+                          "csv" : [
+                            {
+                              "extractor_root" : "/home/melissa/sven/codeql/csv"
+                            }
+                          ],
+                          "html" : [
+                            {
+                              "extractor_root" : "/home/melissa/sven/codeql/html"
+                            }
+                          ],
+                          "properties" : [
+                            {
+                              "extractor_root" : "/home/melissa/sven/codeql/properties"
+                            }
+                          ],
+                          "xml" : [
+                            {
+                              "extractor_root" : "/home/melissa/sven/codeql/xml"
+                            }
+                          ],
+                          "cpp" : [
+                            {
+                              "extractor_root" : "/home/melissa/sven/codeql/cpp"
+                            }
+                          ],
+                          "javascript" : [
+                            {
+                              "extractor_root" : "/home/melissa/sven/codeql/javascript",
+                              "extractor_options" : { }
+                            }
+                          ],
+                          "csharp" : [
+                            {
+                              "extractor_root" : "/home/melissa/sven/codeql/csharp",
+                              "extractor_options" : {
+                                "trap" : {
+                                  "title" : "Options pertaining to TRAP.",
+                                  "description" : "Options pertaining to TRAP.",
+                                  "type" : "object",
+                                  "properties" : {
+                                    "compression" : {
+                                      "title" : "Controls compression for the TRAP files written by the extractor.",
+                                      "description" : "This option is only intended for use in debugging the extractor. Accepted values are 'brotli' (the default, to write brotli-compressed TRAP), 'gzip', and 'none' (to write uncompressed TRAP).\n",
+                                      "type" : "string",
+                                      "pattern" : "^(none|gzip|brotli)$"
+                                    }
+                                  }
+                                },
+                                "buildless" : {
+                                  "title" : "Whether to use buildless (standalone) extraction.",
+                                  "description" : "A value indicating, which type of extraction the autobuilder should perform. If 'true', then the standalone extractor will be used, otherwise tracing extraction will be performed. The default is 'false'. Note that buildless extraction will generally yield less accurate analysis results, and should only be used in cases where it is not possible to build the code (for example if it uses inaccessible dependencies).\n",
+                                  "type" : "string",
+                                  "pattern" : "^(false|true)$"
+                                },
+                                "cil" : {
+                                  "title" : "Whether to enable CIL extraction.",
+                                  "description" : "A value indicating, whether CIL extraction should be enabled. The default is 'true'.\n",
+                                  "type" : "string",
+                                  "pattern" : "^(false|true)$"
+                                }
+                              }
+                            }
+                          ],
+                          "ruby" : [
+                            {
+                              "extractor_root" : "/home/melissa/sven/codeql/ruby"
+                            }
+                          ],
+                          "java" : [
+                            {
+                              "extractor_root" : "/home/melissa/sven/codeql/java",
+                              "extractor_options" : {
+                                "exclude" : {
+                                  "title" : "A glob excluding files from analysis.",
+                                  "description" : "A glob indicating what files to exclude from the analysis.\n",
+                                  "type" : "string"
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      }
+[2025-11-06 07:28:51] [DETAILS] database init> Found candidate extractor root for cpp: /home/melissa/sven/codeql/cpp.
+[2025-11-06 07:28:51] [PROGRESS] database init> Successfully loaded extractor C/C++ (cpp) from /home/melissa/sven/codeql/cpp.
+[2025-11-06 07:28:51] [PROGRESS] database init> Created skeleton CodeQL database at /home/melissa/sven/scripts/mydb. This in-progress database is ready to be populated by an extractor.
+[2025-11-06 07:28:51] Plumbing command codeql database init completed.
+[2025-11-06 07:28:51] Using autobuild script /home/melissa/sven/codeql/cpp/tools/autobuild.sh.
+[2025-11-06 07:28:51] [DETAILS] database create> Detected autobuild command for C/C++: /home/melissa/sven/codeql/cpp/tools/autobuild.sh.
+[2025-11-06 07:28:51] [PROGRESS] database create> Running build command: [/home/melissa/sven/codeql/cpp/tools/autobuild.sh]
+[2025-11-06 07:28:51] Running plumbing command: codeql database trace-command --working-dir=/home/melissa/sven/experiments/sec_eval/sec-eval-2b-prefix/trained/cwe-125/0-c/sec_output --index-traceless-dbs --no-db-cluster -- /home/melissa/sven/scripts/mydb /home/melissa/sven/codeql/cpp/tools/autobuild.sh
+[2025-11-06 07:28:51] [PROGRESS] database trace-command> Running command in /home/melissa/sven/experiments/sec_eval/sec-eval-2b-prefix/trained/cwe-125/0-c/sec_output: [/home/melissa/sven/codeql/cpp/tools/autobuild.sh]
+[2025-11-06 07:28:51] [build-stderr] + TOOLS_DIR=/home/melissa/sven/codeql/cpp/tools
+[2025-11-06 07:28:51] [build-stderr] + /home/melissa/sven/codeql/cpp/tools/detect_source_root
+[2025-11-06 07:28:51] [build-stdout] detect_source_root: Using build system found in '.'
+[2025-11-06 07:28:51] [build-stderr] + '[' -L _lgtm_detected_source_root ']'
+[2025-11-06 07:28:51] [build-stderr] ++ readlink _lgtm_detected_source_root
+[2025-11-06 07:28:51] [build-stderr] + cd .
+[2025-11-06 07:28:51] [build-stderr] + export CXXFLAGS=-fpermissive
+[2025-11-06 07:28:51] [build-stderr] + CXXFLAGS=-fpermissive
+[2025-11-06 07:28:51] [build-stderr] + configure_prefix_opt=
+[2025-11-06 07:28:51] [build-stderr] + '[' -f configure.ac ']'
+[2025-11-06 07:28:51] [build-stderr] + '[' -f configure.in ']'
+[2025-11-06 07:28:51] [build-stderr] + '[' -f CMakeLists.txt ']'
+[2025-11-06 07:28:51] [build-stderr] + '[' -f meson.build ']'
+[2025-11-06 07:28:51] [build-stderr] + try_configure
+[2025-11-06 07:28:51] [build-stderr] + build_dir=.
+[2025-11-06 07:28:51] [build-stderr] + root_dir=.
+[2025-11-06 07:28:51] [build-stderr] + grep -q 'AC_MSG_.* configure in a separate.* directory' configure.in configure.ac
+[2025-11-06 07:28:51] [build-stderr] + for configure in configure configure.gnu
+[2025-11-06 07:28:51] [build-stderr] + '[' -x configure ']'
+[2025-11-06 07:28:51] [build-stderr] + for configure in configure configure.gnu
+[2025-11-06 07:28:51] [build-stderr] + '[' -x configure.gnu ']'
+[2025-11-06 07:28:51] [build-stderr] + rm -rf _lgtm_build_dir
+[2025-11-06 07:28:51] [build-stderr] + for bootstrap in bootstrap.sh bootstrap autogen.sh
+[2025-11-06 07:28:51] [build-stderr] + '[' -x bootstrap.sh ']'
+[2025-11-06 07:28:51] [build-stderr] + '[' -f bootstrap.sh ']'
+[2025-11-06 07:28:51] [build-stderr] + for bootstrap in bootstrap.sh bootstrap autogen.sh
+[2025-11-06 07:28:51] [build-stderr] + '[' -x bootstrap ']'
+[2025-11-06 07:28:51] [build-stderr] + '[' -f bootstrap ']'
+[2025-11-06 07:28:51] [build-stderr] + for bootstrap in bootstrap.sh bootstrap autogen.sh
+[2025-11-06 07:28:51] [build-stderr] + '[' -x autogen.sh ']'
+[2025-11-06 07:28:51] [build-stderr] + '[' -f autogen.sh ']'
+[2025-11-06 07:28:51] [build-stderr] + '[' -f wscript ']'
+[2025-11-06 07:28:51] [build-stderr] + '[' -f Kbuild ']'
+[2025-11-06 07:28:51] [build-stderr] + '[' -f configure.ac ']'
+[2025-11-06 07:28:51] [build-stderr] + '[' -f configure.in ']'
+[2025-11-06 07:28:51] [build-stderr] ++ echo './*.pro'
+[2025-11-06 07:28:51] [build-stderr] + '[' './*.pro' '!=' './*.pro' ']'
+[2025-11-06 07:28:51] [build-stderr] + exit 0
+[2025-11-06 07:28:51] [build-stderr] + export VERBOSE=1
+[2025-11-06 07:28:51] [build-stderr] + VERBOSE=1
+[2025-11-06 07:28:51] [build-stderr] + '[' -L _lgtm_detected_source_root ']'
+[2025-11-06 07:28:51] [build-stderr] ++ readlink _lgtm_detected_source_root
+[2025-11-06 07:28:51] [build-stderr] + cd .
+[2025-11-06 07:28:51] [build-stderr] + '[' -d _lgtm_build_dir ']'
+[2025-11-06 07:28:51] [build-stderr] + '[' -f SConstruct ']'
+[2025-11-06 07:28:51] [build-stderr] + '[' -f wscript ']'
+[2025-11-06 07:28:51] [build-stderr] + '[' -f Makefile ']'
+[2025-11-06 07:28:51] [build-stderr] + make
+[2025-11-06 07:28:51] [build-stdout] make: Nothing to be done for 'all'.
+[2025-11-06 07:28:51] [build-stderr] + exit 0
+[2025-11-06 07:28:51] Plumbing command codeql database trace-command completed.
+[2025-11-06 07:28:51] [PROGRESS] database create> Finalizing database at /home/melissa/sven/scripts/mydb.
+[2025-11-06 07:28:51] Running plumbing command: codeql database finalize --mode=normal --no-db-cluster -- /home/melissa/sven/scripts/mydb
+[2025-11-06 07:28:51] [ERROR] database finalize> No source code was seen and extracted to /home/melissa/sven/scripts/mydb.
+                              This can occur if the specified build commands failed to compile or process any code.
+                               - Confirm that there is some source code for the specified language in the project.
+                               - For codebases written in Go, JavaScript, TypeScript, and Python, do not specify 
+                                 an explicit --command.
+                               - For other languages, the --command must specify a "clean" build which compiles 
+                                 all the source code files without reusing existing build artefacts.
+[2025-11-06 07:28:51] Plumbing command codeql database finalize completed with status 32.
+[2025-11-06 07:28:51] Exiting with code 32

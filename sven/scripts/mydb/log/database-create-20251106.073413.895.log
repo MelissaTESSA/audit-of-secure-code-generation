@@ -1,0 +1,405 @@
+[2025-11-06 07:34:13] This is codeql database create ./mydb --language=cpp --command=make -B --source-root ../experiments/sec_eval/sec-eval-2b-prefix/trained/cwe-125/0-c/sec_output --overwrite
+[2025-11-06 07:34:13] Log file was started late.
+[2025-11-06 07:34:13] [PROGRESS] database create> Initializing database at /home/melissa/sven/scripts/mydb.
+[2025-11-06 07:34:13] Running plumbing command: codeql database init --overwrite --language=cpp --source-root=/home/melissa/sven/experiments/sec_eval/sec-eval-2b-prefix/trained/cwe-125/0-c/sec_output --allow-missing-source-root=false --allow-already-existing -- /home/melissa/sven/scripts/mydb
+[2025-11-06 07:34:13] [PROGRESS] database init> Computing baseline information in /home/melissa/sven/experiments/sec_eval/sec-eval-2b-prefix/trained/cwe-125/0-c/sec_output
+[2025-11-06 07:34:14] [PROGRESS] database init> Resolving extractor cpp.
+[2025-11-06 07:34:14] Calling plumbing command: codeql resolve languages --format=json
+[2025-11-06 07:34:14] [DETAILS] resolve languages> Scanning for [codeql-extractor.yml] from /home/melissa/sven/codeql/.codeqlmanifest.json
+[2025-11-06 07:34:14] [DETAILS] resolve languages> Parsing /home/melissa/sven/codeql/go/codeql-extractor.yml.
+[2025-11-06 07:34:14] [DETAILS] resolve languages> Parsing /home/melissa/sven/codeql/python/codeql-extractor.yml.
+[2025-11-06 07:34:14] [DETAILS] resolve languages> Parsing /home/melissa/sven/codeql/csv/codeql-extractor.yml.
+[2025-11-06 07:34:14] [DETAILS] resolve languages> Parsing /home/melissa/sven/codeql/html/codeql-extractor.yml.
+[2025-11-06 07:34:14] [DETAILS] resolve languages> Parsing /home/melissa/sven/codeql/properties/codeql-extractor.yml.
+[2025-11-06 07:34:14] [DETAILS] resolve languages> Parsing /home/melissa/sven/codeql/xml/codeql-extractor.yml.
+[2025-11-06 07:34:14] [DETAILS] resolve languages> Parsing /home/melissa/sven/codeql/cpp/codeql-extractor.yml.
+[2025-11-06 07:34:14] [DETAILS] resolve languages> Parsing /home/melissa/sven/codeql/javascript/codeql-extractor.yml.
+[2025-11-06 07:34:14] [DETAILS] resolve languages> Parsing /home/melissa/sven/codeql/csharp/codeql-extractor.yml.
+[2025-11-06 07:34:14] [DETAILS] resolve languages> Parsing /home/melissa/sven/codeql/ruby/codeql-extractor.yml.
+[2025-11-06 07:34:14] [DETAILS] resolve languages> Parsing /home/melissa/sven/codeql/java/codeql-extractor.yml.
+[2025-11-06 07:34:14] Plumbing command codeql resolve languages completed:
+                      {
+                        "extractors" : {
+                          "go" : [
+                            {
+                              "extractor_root" : "/home/melissa/sven/codeql/go"
+                            }
+                          ],
+                          "python" : [
+                            {
+                              "extractor_root" : "/home/melissa/sven/codeql/python"
+                            }
+                          ],
+                          "csv" : [
+                            {
+                              "extractor_root" : "/home/melissa/sven/codeql/csv"
+                            }
+                          ],
+                          "html" : [
+                            {
+                              "extractor_root" : "/home/melissa/sven/codeql/html"
+                            }
+                          ],
+                          "properties" : [
+                            {
+                              "extractor_root" : "/home/melissa/sven/codeql/properties"
+                            }
+                          ],
+                          "xml" : [
+                            {
+                              "extractor_root" : "/home/melissa/sven/codeql/xml"
+                            }
+                          ],
+                          "cpp" : [
+                            {
+                              "extractor_root" : "/home/melissa/sven/codeql/cpp"
+                            }
+                          ],
+                          "javascript" : [
+                            {
+                              "extractor_root" : "/home/melissa/sven/codeql/javascript",
+                              "extractor_options" : { }
+                            }
+                          ],
+                          "csharp" : [
+                            {
+                              "extractor_root" : "/home/melissa/sven/codeql/csharp",
+                              "extractor_options" : {
+                                "trap" : {
+                                  "title" : "Options pertaining to TRAP.",
+                                  "description" : "Options pertaining to TRAP.",
+                                  "type" : "object",
+                                  "properties" : {
+                                    "compression" : {
+                                      "title" : "Controls compression for the TRAP files written by the extractor.",
+                                      "description" : "This option is only intended for use in debugging the extractor. Accepted values are 'brotli' (the default, to write brotli-compressed TRAP), 'gzip', and 'none' (to write uncompressed TRAP).\n",
+                                      "type" : "string",
+                                      "pattern" : "^(none|gzip|brotli)$"
+                                    }
+                                  }
+                                },
+                                "buildless" : {
+                                  "title" : "Whether to use buildless (standalone) extraction.",
+                                  "description" : "A value indicating, which type of extraction the autobuilder should perform. If 'true', then the standalone extractor will be used, otherwise tracing extraction will be performed. The default is 'false'. Note that buildless extraction will generally yield less accurate analysis results, and should only be used in cases where it is not possible to build the code (for example if it uses inaccessible dependencies).\n",
+                                  "type" : "string",
+                                  "pattern" : "^(false|true)$"
+                                },
+                                "cil" : {
+                                  "title" : "Whether to enable CIL extraction.",
+                                  "description" : "A value indicating, whether CIL extraction should be enabled. The default is 'true'.\n",
+                                  "type" : "string",
+                                  "pattern" : "^(false|true)$"
+                                }
+                              }
+                            }
+                          ],
+                          "ruby" : [
+                            {
+                              "extractor_root" : "/home/melissa/sven/codeql/ruby"
+                            }
+                          ],
+                          "java" : [
+                            {
+                              "extractor_root" : "/home/melissa/sven/codeql/java",
+                              "extractor_options" : {
+                                "exclude" : {
+                                  "title" : "A glob excluding files from analysis.",
+                                  "description" : "A glob indicating what files to exclude from the analysis.\n",
+                                  "type" : "string"
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      }
+[2025-11-06 07:34:14] [DETAILS] database init> Found candidate extractor root for cpp: /home/melissa/sven/codeql/cpp.
+[2025-11-06 07:34:14] [PROGRESS] database init> Successfully loaded extractor C/C++ (cpp) from /home/melissa/sven/codeql/cpp.
+[2025-11-06 07:34:14] [PROGRESS] database init> Created skeleton CodeQL database at /home/melissa/sven/scripts/mydb. This in-progress database is ready to be populated by an extractor.
+[2025-11-06 07:34:14] Plumbing command codeql database init completed.
+[2025-11-06 07:34:14] [PROGRESS] database create> Running build command: [make, -B]
+[2025-11-06 07:34:14] Running plumbing command: codeql database trace-command --working-dir=/home/melissa/sven/experiments/sec_eval/sec-eval-2b-prefix/trained/cwe-125/0-c/sec_output --index-traceless-dbs --no-db-cluster -- /home/melissa/sven/scripts/mydb make -B
+[2025-11-06 07:34:14] [PROGRESS] database trace-command> Running command in /home/melissa/sven/experiments/sec_eval/sec-eval-2b-prefix/trained/cwe-125/0-c/sec_output: [make, -B]
+[2025-11-06 07:34:14] [build-stdout] gcc -c 00.c -o 00.o
+[2025-11-06 07:34:14] [build-stdout] gcc -c 01.c -o 01.o
+[2025-11-06 07:34:15] [build-stdout] gcc -c 02.c -o 02.o
+[2025-11-06 07:34:15] [build-stdout] gcc -c 03.c -o 03.o
+[2025-11-06 07:34:15] [build-stdout] gcc -c 04.c -o 04.o
+[2025-11-06 07:34:15] [build-stdout] gcc -c 05.c -o 05.o
+[2025-11-06 07:34:15] [build-stdout] gcc -c 06.c -o 06.o
+[2025-11-06 07:34:15] [build-stdout] gcc -c 07.c -o 07.o
+[2025-11-06 07:34:15] [build-stdout] gcc -c 08.c -o 08.o
+[2025-11-06 07:34:15] [build-stdout] gcc -c 09.c -o 09.o
+[2025-11-06 07:34:15] [build-stdout] gcc -c 10.c -o 10.o
+[2025-11-06 07:34:15] [build-stdout] gcc -c 11.c -o 11.o
+[2025-11-06 07:34:16] [build-stdout] gcc -c 12.c -o 12.o
+[2025-11-06 07:34:16] [build-stdout] gcc -c 13.c -o 13.o
+[2025-11-06 07:34:16] [build-stdout] gcc -c 14.c -o 14.o
+[2025-11-06 07:34:16] [build-stdout] gcc -c 15.c -o 15.o
+[2025-11-06 07:34:16] [build-stdout] gcc -c 16.c -o 16.o
+[2025-11-06 07:34:16] [build-stdout] gcc -c 17.c -o 17.o
+[2025-11-06 07:34:16] [build-stdout] gcc -c 18.c -o 18.o
+[2025-11-06 07:34:16] [build-stdout] gcc -c 19.c -o 19.o
+[2025-11-06 07:34:16] [build-stdout] gcc -c 20.c -o 20.o
+[2025-11-06 07:34:16] [build-stdout] gcc -c 21.c -o 21.o
+[2025-11-06 07:34:17] [build-stdout] gcc -c 22.c -o 22.o
+[2025-11-06 07:34:17] [build-stdout] gcc -c 23.c -o 23.o
+[2025-11-06 07:34:17] [build-stdout] gcc -c 24.c -o 24.o
+[2025-11-06 07:34:17] Plumbing command codeql database trace-command completed.
+[2025-11-06 07:34:17] [PROGRESS] database create> Finalizing database at /home/melissa/sven/scripts/mydb.
+[2025-11-06 07:34:17] Running plumbing command: codeql database finalize --mode=normal --no-db-cluster -- /home/melissa/sven/scripts/mydb
+[2025-11-06 07:34:17] [PROGRESS] database finalize> Running TRAP import for CodeQL database at /home/melissa/sven/scripts/mydb...
+[2025-11-06 07:34:17] Running plumbing command: codeql dataset import --dbscheme=/home/melissa/sven/codeql/cpp/semmlecode.cpp.dbscheme -- /home/melissa/sven/scripts/mydb/db-cpp /home/melissa/sven/scripts/mydb/trap/cpp
+[2025-11-06 07:34:17] Clearing disk cache since the version file /home/melissa/sven/scripts/mydb/db-cpp/default/cache/version does not exist
+[2025-11-06 07:34:17] Tuple pool not found. Clearing relations with cached strings
+[2025-11-06 07:34:17] Trimming disk cache at /home/melissa/sven/scripts/mydb/db-cpp/default/cache in mode brutal.
+[2025-11-06 07:34:17] Sequence stamp origin is -5984373537117345714
+[2025-11-06 07:34:17] Pausing evaluation to hard-clear memory at sequence stamp o+0
+[2025-11-06 07:34:17] Unpausing evaluation
+[2025-11-06 07:34:17] Pausing evaluation to quickly trim disk at sequence stamp o+1
+[2025-11-06 07:34:17] Unpausing evaluation
+[2025-11-06 07:34:17] Pausing evaluation to zealously trim disk at sequence stamp o+2
+[2025-11-06 07:34:17] Unpausing evaluation
+[2025-11-06 07:34:17] Trimming completed (8ms): Purged everything.
+[2025-11-06 07:34:17] Scanning for files in /home/melissa/sven/scripts/mydb/trap/cpp
+[2025-11-06 07:34:17] Importing cpp_predefined.acb19af8.trap (00.c.a0858d14_0.trap.tar.br) (1 of 110)
+[2025-11-06 07:34:17] Importing wordsize.h.0a5d81b3.trap (00.c.a0858d14_0.trap.tar.br) (2 of 110)
+[2025-11-06 07:34:17] Importing timesize.h.78ece2f3.trap (00.c.a0858d14_0.trap.tar.br) (3 of 110)
+[2025-11-06 07:34:17] Importing features-time64.h.eb8654d3.trap (00.c.a0858d14_0.trap.tar.br) (4 of 110)
+[2025-11-06 07:34:17] Importing stdc-predef.h.3efb7735.trap (00.c.a0858d14_0.trap.tar.br) (5 of 110)
+[2025-11-06 07:34:17] Importing long-double.h.c86d65af.trap (00.c.a0858d14_0.trap.tar.br) (6 of 110)
+[2025-11-06 07:34:17] Importing cdefs.h.0be93e6f.trap (00.c.a0858d14_0.trap.tar.br) (7 of 110)
+[2025-11-06 07:34:17] Importing stubs-64.h.3efb7735.trap (00.c.a0858d14_0.trap.tar.br) (8 of 110)
+[2025-11-06 07:34:17] Importing stubs.h.d28181f8.trap (00.c.a0858d14_0.trap.tar.br) (9 of 110)
+[2025-11-06 07:34:17] Importing features.h.8ccdbe56.trap (00.c.a0858d14_0.trap.tar.br) (10 of 110)
+[2025-11-06 07:34:17] Importing libc-header-start.h.bfbf6994.trap (00.c.a0858d14_0.trap.tar.br) (11 of 110)
+[2025-11-06 07:34:17] Importing stddef.h.ee87de6f.trap (00.c.a0858d14_0.trap.tar.br) (12 of 110)
+[2025-11-06 07:34:17] Importing stdarg.h.717ad580.trap (00.c.a0858d14_0.trap.tar.br) (13 of 110)
+[2025-11-06 07:34:17] Importing typesizes.h.710fd7d4.trap (00.c.a0858d14_0.trap.tar.br) (14 of 110)
+[2025-11-06 07:34:17] Importing time64.h.90f79421.trap (00.c.a0858d14_0.trap.tar.br) (15 of 110)
+[2025-11-06 07:34:17] Importing types.h.69f94cfe.trap (00.c.a0858d14_0.trap.tar.br) (16 of 110)
+[2025-11-06 07:34:17] Importing __mbstate_t.h.ce8652d1.trap (00.c.a0858d14_0.trap.tar.br) (17 of 110)
+[2025-11-06 07:34:17] Importing __fpos_t.h.cb3e0523.trap (00.c.a0858d14_0.trap.tar.br) (18 of 110)
+[2025-11-06 07:34:17] Importing __fpos64_t.h.c87d7bdd.trap (00.c.a0858d14_0.trap.tar.br) (19 of 110)
+[2025-11-06 07:34:17] Importing __FILE.h.916d4b36.trap (00.c.a0858d14_0.trap.tar.br) (20 of 110)
+[2025-11-06 07:34:17] Importing FILE.h.ab31225d.trap (00.c.a0858d14_0.trap.tar.br) (21 of 110)
+[2025-11-06 07:34:17] Importing struct_FILE.h.3b259277.trap (00.c.a0858d14_0.trap.tar.br) (22 of 110)
+[2025-11-06 07:34:17] Importing cookie_io_functions_t.h.338c2fc8.trap (00.c.a0858d14_0.trap.tar.br) (23 of 110)
+[2025-11-06 07:34:17] Importing stdio_lim.h.7dcef54d.trap (00.c.a0858d14_0.trap.tar.br) (24 of 110)
+[2025-11-06 07:34:17] Importing floatn-common.h.17dc76fc.trap (00.c.a0858d14_0.trap.tar.br) (25 of 110)
+[2025-11-06 07:34:17] Importing floatn.h.6c60bba1.trap (00.c.a0858d14_0.trap.tar.br) (26 of 110)
+[2025-11-06 07:34:17] Importing stdio.h.9c6e2939.trap (00.c.a0858d14_0.trap.tar.br) (27 of 110)
+[2025-11-06 07:34:17] Importing libc-header-start.h.46933bf1.trap (00.c.a0858d14_0.trap.tar.br) (28 of 110)
+[2025-11-06 07:34:17] Importing stddef.h.267e0910.trap (00.c.a0858d14_0.trap.tar.br) (29 of 110)
+[2025-11-06 07:34:17] Importing waitflags.h.7c231b41.trap (00.c.a0858d14_0.trap.tar.br) (30 of 110)
+[2025-11-06 07:34:17] Importing waitstatus.h.139f2cad.trap (00.c.a0858d14_0.trap.tar.br) (31 of 110)
+[2025-11-06 07:34:17] Importing clock_t.h.d57b4bd7.trap (00.c.a0858d14_0.trap.tar.br) (32 of 110)
+[2025-11-06 07:34:17] Importing clockid_t.h.4f4e2e61.trap (00.c.a0858d14_0.trap.tar.br) (33 of 110)
+[2025-11-06 07:34:17] Importing time_t.h.f53f57c9.trap (00.c.a0858d14_0.trap.tar.br) (34 of 110)
+[2025-11-06 07:34:17] Importing timer_t.h.39506049.trap (00.c.a0858d14_0.trap.tar.br) (35 of 110)
+[2025-11-06 07:34:17] Importing stddef.h.b6c187e9.trap (00.c.a0858d14_0.trap.tar.br) (36 of 110)
+[2025-11-06 07:34:17] Importing stdint-intn.h.3a2bc0a5.trap (00.c.a0858d14_0.trap.tar.br) (37 of 110)
+[2025-11-06 07:34:17] Importing endianness.h.91b0a2c0.trap (00.c.a0858d14_0.trap.tar.br) (38 of 110)
+[2025-11-06 07:34:18] Importing endian.h.197889e3.trap (00.c.a0858d14_0.trap.tar.br) (39 of 110)
+[2025-11-06 07:34:18] Importing byteswap.h.4d10991e.trap (00.c.a0858d14_0.trap.tar.br) (40 of 110)
+[2025-11-06 07:34:18] Importing uintn-identity.h.bf65810a.trap (00.c.a0858d14_0.trap.tar.br) (41 of 110)
+[2025-11-06 07:34:18] Importing endian.h.c9534759.trap (00.c.a0858d14_0.trap.tar.br) (42 of 110)
+[2025-11-06 07:34:18] Importing select.h.11da5468.trap (00.c.a0858d14_0.trap.tar.br) (43 of 110)
+[2025-11-06 07:34:18] Importing __sigset_t.h.58b82540.trap (00.c.a0858d14_0.trap.tar.br) (44 of 110)
+[2025-11-06 07:34:18] Importing sigset_t.h.f286b014.trap (00.c.a0858d14_0.trap.tar.br) (45 of 110)
+[2025-11-06 07:34:18] Importing struct_timeval.h.2fb39bfe.trap (00.c.a0858d14_0.trap.tar.br) (46 of 110)
+[2025-11-06 07:34:18] Importing struct_timespec.h.c0002776.trap (00.c.a0858d14_0.trap.tar.br) (47 of 110)
+[2025-11-06 07:34:18] Importing select.h.cdd5bac9.trap (00.c.a0858d14_0.trap.tar.br) (48 of 110)
+[2025-11-06 07:34:18] Importing pthreadtypes-arch.h.47e558dd.trap (00.c.a0858d14_0.trap.tar.br) (49 of 110)
+[2025-11-06 07:34:18] Importing atomic_wide_counter.h.dfdb9965.trap (00.c.a0858d14_0.trap.tar.br) (50 of 110)
+[2025-11-06 07:34:18] Importing struct_mutex.h.bdae4b9a.trap (00.c.a0858d14_0.trap.tar.br) (51 of 110)
+[2025-11-06 07:34:18] Importing struct_rwlock.h.5550c404.trap (00.c.a0858d14_0.trap.tar.br) (52 of 110)
+[2025-11-06 07:34:18] Importing thread-shared-types.h.d0536326.trap (00.c.a0858d14_0.trap.tar.br) (53 of 110)
+[2025-11-06 07:34:18] Importing pthreadtypes.h.1c76bcca.trap (00.c.a0858d14_0.trap.tar.br) (54 of 110)
+[2025-11-06 07:34:18] Importing types.h.e612e324.trap (00.c.a0858d14_0.trap.tar.br) (55 of 110)
+[2025-11-06 07:34:18] Importing stddef.h.03542938.trap (00.c.a0858d14_0.trap.tar.br) (56 of 110)
+[2025-11-06 07:34:18] Importing alloca.h.b3190665.trap (00.c.a0858d14_0.trap.tar.br) (57 of 110)
+[2025-11-06 07:34:18] Importing stdlib-float.h.dddd8e34.trap (00.c.a0858d14_0.trap.tar.br) (58 of 110)
+[2025-11-06 07:34:18] Importing stdlib.h.e6dcbbd3.trap (00.c.a0858d14_0.trap.tar.br) (59 of 110)
+[2025-11-06 07:34:18] Importing 00.c.a0858d14.trap (00.c.a0858d14_0.trap.tar.br) (60 of 110)
+[2025-11-06 07:34:18] Importing 01.c.075354bd.trap (01.c.075354bd_0.trap.tar.br) (61 of 110)
+[2025-11-06 07:34:18] Importing 02.c.1607e58f.trap (02.c.1607e58f_0.trap.tar.br) (62 of 110)
+[2025-11-06 07:34:18] Importing 03.c.2b963ec8.trap (03.c.2b963ec8_0.trap.tar.br) (63 of 110)
+[2025-11-06 07:34:18] Importing 04.c.1b23046b.trap (04.c.1b23046b_0.trap.tar.br) (64 of 110)
+[2025-11-06 07:34:18] Importing 05.c.8ab4de08.trap (05.c.8ab4de08_0.trap.tar.br) (65 of 110)
+[2025-11-06 07:34:18] Importing 06.c.852acce0.trap (06.c.852acce0_0.trap.tar.br) (66 of 110)
+[2025-11-06 07:34:18] Importing 07.c.24be9581.trap (07.c.24be9581_0.trap.tar.br) (67 of 110)
+[2025-11-06 07:34:18] Importing 08.c.f66d196b.trap (08.c.f66d196b_0.trap.tar.br) (68 of 110)
+[2025-11-06 07:34:18] Importing 09.c.a81942ce.trap (09.c.a81942ce_0.trap.tar.br) (69 of 110)
+[2025-11-06 07:34:18] Importing 10.c.852f868a.trap (10.c.852f868a_0.trap.tar.br) (70 of 110)
+[2025-11-06 07:34:18] Importing 11.c.24b9dbe9.trap (11.c.24b9dbe9_0.trap.tar.br) (71 of 110)
+[2025-11-06 07:34:18] Importing 12.c.2b27ceff.trap (12.c.2b27ceff_0.trap.tar.br) (72 of 110)
+[2025-11-06 07:34:18] Importing 13.c.92bc33e4.trap (13.c.92bc33e4_0.trap.tar.br) (73 of 110)
+[2025-11-06 07:34:18] Importing 14.c.0e832bbb.trap (14.c.0e832bbb_0.trap.tar.br) (74 of 110)
+[2025-11-06 07:34:18] Importing 15.c.8038d2a1.trap (15.c.8038d2a1_0.trap.tar.br) (75 of 110)
+[2025-11-06 07:34:18] Importing 16.c.a88ae330.trap (16.c.a88ae330_0.trap.tar.br) (76 of 110)
+[2025-11-06 07:34:18] Importing 17.c.f6d32fb8.trap (17.c.f6d32fb8_0.trap.tar.br) (77 of 110)
+[2025-11-06 07:34:18] Importing 18.c.bb781c5b.trap (18.c.bb781c5b_0.trap.tar.br) (78 of 110)
+[2025-11-06 07:34:18] Importing 19.c.00275400.trap (19.c.00275400_0.trap.tar.br) (79 of 110)
+[2025-11-06 07:34:18] Importing 20.c.c5c5c034.trap (20.c.c5c5c034_0.trap.tar.br) (80 of 110)
+[2025-11-06 07:34:18] Importing 21.c.7e13a21d.trap (21.c.7e13a21d_0.trap.tar.br) (81 of 110)
+[2025-11-06 07:34:18] Importing 22.c.4ac82550.trap (22.c.4ac82550_0.trap.tar.br) (82 of 110)
+[2025-11-06 07:34:18] Importing 23.c.b50e93ca.trap (23.c.b50e93ca_0.trap.tar.br) (83 of 110)
+[2025-11-06 07:34:18] Importing 24.c.cd1059ad.trap (24.c.cd1059ad_0.trap.tar.br) (84 of 110)
+[2025-11-06 07:34:18] Importing 4447089_0.trap.br (85 of 110)
+[2025-11-06 07:34:18] Importing 29764675_0.trap.br (86 of 110)
+[2025-11-06 07:34:18] Importing 61726141_0.trap.br (87 of 110)
+[2025-11-06 07:34:18] Importing 20345600_0.trap.br (88 of 110)
+[2025-11-06 07:34:18] Importing 30274310_0.trap.br (89 of 110)
+[2025-11-06 07:34:18] Importing 36295248_0.trap.br (90 of 110)
+[2025-11-06 07:34:18] Importing 29978390_0.trap.br (91 of 110)
+[2025-11-06 07:34:18] Importing 41278850_0.trap.br (92 of 110)
+[2025-11-06 07:34:18] Importing 66719018_0.trap.br (93 of 110)
+[2025-11-06 07:34:18] Importing 28781251_0.trap.br (94 of 110)
+[2025-11-06 07:34:18] Importing 6895498_0.trap.br (95 of 110)
+[2025-11-06 07:34:18] Importing 64020945_0.trap.br (96 of 110)
+[2025-11-06 07:34:18] Importing 21400927_0.trap.br (97 of 110)
+[2025-11-06 07:34:18] Importing 39398415_0.trap.br (98 of 110)
+[2025-11-06 07:34:18] Importing 1313766_0.trap.br (99 of 110)
+[2025-11-06 07:34:18] Importing 50361843_0.trap.br (100 of 110)
+[2025-11-06 07:34:18] Importing 12747442_0.trap.br (101 of 110)
+[2025-11-06 07:34:18] Importing 21844506_0.trap.br (102 of 110)
+[2025-11-06 07:34:18] Importing 64824290_0.trap.br (103 of 110)
+[2025-11-06 07:34:18] Importing 20689203_0.trap.br (104 of 110)
+[2025-11-06 07:34:18] Importing 35917923_0.trap.br (105 of 110)
+[2025-11-06 07:34:18] Importing 12371815_0.trap.br (106 of 110)
+[2025-11-06 07:34:18] Importing 20125647_0.trap.br (107 of 110)
+[2025-11-06 07:34:18] Importing 66971779_0.trap.br (108 of 110)
+[2025-11-06 07:34:18] Importing 2196633_0.trap.br (109 of 110)
+[2025-11-06 07:34:18] Importing sourceLocationPrefix.trap.gz (110 of 110)
+[2025-11-06 07:34:18] Merging 1 fragment for builtintypes.
+[2025-11-06 07:34:18] Merging 1 fragment for unspecifiedtype.
+[2025-11-06 07:34:18] Merging 1 fragment for files.
+[2025-11-06 07:34:18] Merging 1 fragment for locations_default.
+[2025-11-06 07:34:18] Merging 1 fragment for link_targets.
+[2025-11-06 07:34:18] Merging 1 fragment for locations_stmt.
+[2025-11-06 07:34:18] Merging 1 fragment for locations_expr.
+[2025-11-06 07:34:18] Merging 1 fragment for usertypes.
+[2025-11-06 07:34:18] Merging 1 fragment for link_parent.
+[2025-11-06 07:34:18] Merging 1 fragment for usertypesize.
+[2025-11-06 07:34:18] Merging 1 fragment for is_pod_class.
+[2025-11-06 07:34:18] Merging 1 fragment for is_standard_layout_class.
+[2025-11-06 07:34:18] Merging 1 fragment for is_complete.
+[2025-11-06 07:34:18] Merging 1 fragment for membervariables.
+[2025-11-06 07:34:18] Merging 1 fragment for fieldoffsets.
+[2025-11-06 07:34:18] Merging 1 fragment for var_decls.
+[2025-11-06 07:34:18] Merging 1 fragment for var_def.
+[2025-11-06 07:34:18] Merging 1 fragment for derivedtypes.
+[2025-11-06 07:34:18] Merging 1 fragment for pointerishsize.
+[2025-11-06 07:34:18] Merging 1 fragment for member.
+[2025-11-06 07:34:18] Merging 1 fragment for namespaces.
+[2025-11-06 07:34:18] Merging 1 fragment for specialnamequalifyingelements.
+[2025-11-06 07:34:18] Merging 1 fragment for mangled_name.
+[2025-11-06 07:34:18] Merging 1 fragment for specifiers.
+[2025-11-06 07:34:18] Merging 1 fragment for numlines.
+[2025-11-06 07:34:18] Merging 1 fragment for preprocdirects.
+[2025-11-06 07:34:18] Merging 1 fragment for preproctext.
+[2025-11-06 07:34:18] Merging 1 fragment for preproctrue.
+[2025-11-06 07:34:18] Merging 1 fragment for macroinvocations.
+[2025-11-06 07:34:18] Merging 1 fragment for comments.
+[2025-11-06 07:34:18] Merging 1 fragment for commentbinding.
+[2025-11-06 07:34:18] Merging 1 fragment for containerparent.
+[2025-11-06 07:34:18] Merging 1 fragment for folders.
+[2025-11-06 07:34:18] Merging 1 fragment for preprocpair.
+[2025-11-06 07:34:18] Merging 1 fragment for includes.
+[2025-11-06 07:34:18] Merging 1 fragment for preprocfalse.
+[2025-11-06 07:34:18] Merging 1 fragment for macro_argument_unexpanded.
+[2025-11-06 07:34:18] Merging 1 fragment for macro_argument_expanded.
+[2025-11-06 07:34:18] Merging 1 fragment for macroparent.
+[2025-11-06 07:34:18] Merging 1 fragment for typedefbase.
+[2025-11-06 07:34:18] Merging 1 fragment for type_decls.
+[2025-11-06 07:34:18] Merging 1 fragment for type_decl_top.
+[2025-11-06 07:34:18] Merging 1 fragment for arraysizes.
+[2025-11-06 07:34:18] Merging 1 fragment for type_mentions.
+[2025-11-06 07:34:18] Merging 1 fragment for type_def.
+[2025-11-06 07:34:18] Merging 1 fragment for values.
+[2025-11-06 07:34:18] Merging 1 fragment for exprs.
+[2025-11-06 07:34:18] Merging 1 fragment for expr_types.
+[2025-11-06 07:34:18] Merging 1 fragment for valuebind.
+[2025-11-06 07:34:18] Merging 1 fragment for inmacroexpansion.
+[2025-11-06 07:34:18] Merging 1 fragment for macrolocationbind.
+[2025-11-06 07:34:18] Merging 1 fragment for varspecifiers.
+[2025-11-06 07:34:18] Merging 1 fragment for valuetext.
+[2025-11-06 07:34:18] Merging 1 fragment for compgenerated.
+[2025-11-06 07:34:18] Merging 1 fragment for sizeof_bind.
+[2025-11-06 07:34:18] Merging 1 fragment for exprconv.
+[2025-11-06 07:34:18] Merging 1 fragment for conversionkinds.
+[2025-11-06 07:34:18] Merging 1 fragment for exprparents.
+[2025-11-06 07:34:18] Merging 1 fragment for routinetypes.
+[2025-11-06 07:34:18] Merging 1 fragment for routinetypeargs.
+[2025-11-06 07:34:18] Merging 1 fragment for typespecifiers.
+[2025-11-06 07:34:18] Merging 1 fragment for functions.
+[2025-11-06 07:34:18] Merging 1 fragment for function_return_type.
+[2025-11-06 07:34:18] Merging 1 fragment for params.
+[2025-11-06 07:34:18] Merging 1 fragment for globalvariables.
+[2025-11-06 07:34:18] Merging 1 fragment for fun_decls.
+[2025-11-06 07:34:18] Merging 1 fragment for fun_decl_specifiers.
+[2025-11-06 07:34:18] Merging 1 fragment for param_decl_bind.
+[2025-11-06 07:34:18] Merging 1 fragment for attributes.
+[2025-11-06 07:34:18] Merging 1 fragment for funcattributes.
+[2025-11-06 07:34:18] Merging 1 fragment for attribute_arg_constant.
+[2025-11-06 07:34:18] Merging 1 fragment for attribute_args.
+[2025-11-06 07:34:18] Merging 1 fragment for attribute_arg_value.
+[2025-11-06 07:34:18] Merging 1 fragment for var_decl_specifiers.
+[2025-11-06 07:34:18] Merging 1 fragment for funspecifiers.
+[2025-11-06 07:34:18] Merging 1 fragment for fun_def.
+[2025-11-06 07:34:18] Merging 1 fragment for stmts.
+[2025-11-06 07:34:18] Merging 1 fragment for funbind.
+[2025-11-06 07:34:18] Merging 1 fragment for expr_isload.
+[2025-11-06 07:34:18] Merging 1 fragment for affectedbymacroexpansion.
+[2025-11-06 07:34:18] Merging 1 fragment for stmtparents.
+[2025-11-06 07:34:18] Merging 1 fragment for blockscope.
+[2025-11-06 07:34:18] Merging 1 fragment for function_entry_point.
+[2025-11-06 07:34:18] Merging 1 fragment for iscall.
+[2025-11-06 07:34:18] Merging 1 fragment for varbind.
+[2025-11-06 07:34:18] Merging 1 fragment for typeattributes.
+[2025-11-06 07:34:18] Merging 1 fragment for fileannotations.
+[2025-11-06 07:34:18] Merging 1 fragment for localvariables.
+[2025-11-06 07:34:18] Merging 1 fragment for aggregate_array_init.
+[2025-11-06 07:34:18] Merging 1 fragment for braced_initialisers.
+[2025-11-06 07:34:18] Merging 1 fragment for stmt_decl_bind.
+[2025-11-06 07:34:18] Merging 1 fragment for stmt_decl_entry_bind.
+[2025-11-06 07:34:18] Merging 1 fragment for if_then.
+[2025-11-06 07:34:18] Merging 1 fragment for if_else.
+[2025-11-06 07:34:18] Merging 1 fragment for initialisers.
+[2025-11-06 07:34:18] Merging 1 fragment for expr_ancestor.
+[2025-11-06 07:34:18] Merging 1 fragment for compilations.
+[2025-11-06 07:34:18] Merging 1 fragment for compilation_args.
+[2025-11-06 07:34:18] Merging 1 fragment for compilation_compiling_files.
+[2025-11-06 07:34:18] Merging 1 fragment for compilation_time.
+[2025-11-06 07:34:18] Merging 1 fragment for compilation_finished.
+[2025-11-06 07:34:18] Merging 1 fragment for sourceLocationPrefix.
+[2025-11-06 07:34:18] Saving string and id pools to disk.
+[2025-11-06 07:34:18] Finished importing trap files.
+[2025-11-06 07:34:18] Pausing evaluation to close the cache at sequence stamp o+3
+[2025-11-06 07:34:18] The disk cache is freshly trimmed; leave it be.
+[2025-11-06 07:34:18] Unpausing evaluation
+[2025-11-06 07:34:18] Plumbing command codeql dataset import completed.
+[2025-11-06 07:34:18] [PROGRESS] database finalize> TRAP import complete (962ms).
+[2025-11-06 07:34:18] Running plumbing command: codeql database cleanup --mode=normal -- /home/melissa/sven/scripts/mydb
+[2025-11-06 07:34:18] [PROGRESS] database cleanup> Cleaning up existing TRAP files after import...
+[2025-11-06 07:34:18] [PROGRESS] database cleanup> TRAP files cleaned up (4ms).
+[2025-11-06 07:34:18] [PROGRESS] database cleanup> Cleaning up scratch directory...
+[2025-11-06 07:34:18] [PROGRESS] database cleanup> Scratch directory cleaned up (6ms).
+[2025-11-06 07:34:18] Running plumbing command: codeql dataset cleanup --mode=normal -- /home/melissa/sven/scripts/mydb/db-cpp
+[2025-11-06 07:34:18] [PROGRESS] dataset cleanup> Cleaning up dataset in /home/melissa/sven/scripts/mydb/db-cpp.
+[2025-11-06 07:34:18] Trimming disk cache at /home/melissa/sven/scripts/mydb/db-cpp/default/cache in mode normal.
+[2025-11-06 07:34:18] Sequence stamp origin is -5984373533271728728
+[2025-11-06 07:34:18] Pausing evaluation to zealously trim disk at sequence stamp o+0
+[2025-11-06 07:34:18] Unpausing evaluation
+[2025-11-06 07:34:18] Trimming completed (3ms): Trimmed disposable data from cache.
+[2025-11-06 07:34:18] Pausing evaluation to close the cache at sequence stamp o+1
+[2025-11-06 07:34:18] The disk cache is freshly trimmed; leave it be.
+[2025-11-06 07:34:18] Unpausing evaluation
+[2025-11-06 07:34:18] [PROGRESS] dataset cleanup> Trimmed disposable data from cache.
+[2025-11-06 07:34:18] [PROGRESS] dataset cleanup> Finalizing dataset in /home/melissa/sven/scripts/mydb/db-cpp
+[2025-11-06 07:34:18] [DETAILS] dataset cleanup> Finished deleting ID pool from /home/melissa/sven/scripts/mydb/db-cpp (2ms).
+[2025-11-06 07:34:18] Plumbing command codeql dataset cleanup completed.
+[2025-11-06 07:34:18] Plumbing command codeql database cleanup completed with status 0.
+[2025-11-06 07:34:18] Plumbing command codeql database finalize completed.
+[2025-11-06 07:34:18] [PROGRESS] database create> Successfully created database at /home/melissa/sven/scripts/mydb.
+[2025-11-06 07:34:18] Terminating normally.

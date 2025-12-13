@@ -1,0 +1,3 @@
+Running sec_eval.py for 6b-prefix on train_OneComment...
+11/06/2025 15:19:50 - INFO - root -   Device: cuda, n_gpu: 2
+11/06/2025 15:19:50 - INFO - root -   args: Namespace(output_name='sec-eval-6b-prefix', eval_type='trained', vul_type=None, model_type='prefix', model_dir='../trained/6b-prefix/checkpoint-last', data_dir='../data_eval/train_OneComment/trained', output_dir='../experiments/sec_eval/sec-eval-6b-prefix/trained', num_gen=25, temp=0.4, max_gen_len=300, top_p=0.95, seed=1, logger=<RootLogger root (INFO)>, n_gpu=2, device=device(type='cuda'))
