@@ -12,7 +12,7 @@ BASE_DIR = "/home/melissa/sven/data_eval/train_CommentToQuestion/trained"
 MODEL = "gpt-4o"
 
 # Set your OpenAI API key
-openai.api_key = os.getenv("OPENAI_API_KEY", "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")
+openai.api_key = os.getenv("OPENAI_API_KEY")
 client = openai.OpenAI(api_key=openai.api_key)
 
 def get_openai_response(prompt, model=MODEL):
