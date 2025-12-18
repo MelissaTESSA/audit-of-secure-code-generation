@@ -43,8 +43,9 @@ cd PromSec
 Set up Python dependencies (a virtual environment is recommended)
 ```bash
 conda create -n promsec_env python=3.10 -y
-conda activate promsec_env```
-# Install required packages: (Python 3.x, PyTorch, PyTorch Geometric, NetworkX, Matplotlib, OpenAI API, Bandit)
+conda activate promsec_env
+```
+Install required packages: (Python 3.x, PyTorch, PyTorch Geometric, NetworkX, Matplotlib, OpenAI API, Bandit)
 Set your OPENAI_API_KEY
 Execute the cells of Demo_PromSec_PoC_Oct_2024_public.ipynb on the original Testing_DS from the PromSec paper
 
