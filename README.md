@@ -26,3 +26,21 @@ Summary of steps for each method:
 ```bash
 git clone https://anonymous.4open.science/r/audit-of-secure-code-generation-53E6/
 cd audit-of-secure-code-generation-53E6
+### 1️⃣ PromSec (Black-box Prompt Optimization)
+
+- **Repository:** https://github.com/mahmoudkanazzal/PromSec
+
+**What we reproduce:**
+- Original PromSec repair loop
+- Security evaluation using Bandit (Python) and SpotBugs (Java)
+- Functional preservation via graph similarity and fuzzing, as in the paper
+
+**Setup:**
+```bash
+cd PromSec
+# Set up Python dependencies (a virtual environment is recommended)
+conda create -n promsec_env python=3.10 -y
+conda activate promsec_env
+Install required packages: (Python 3.x, PyTorch, PyTorch Geometric, NetworkX, Matplotlib, OpenAI API, Bandit)
+Set your OPENAI_API_KEY
+Execute the cells of Demo_PromSec_PoC_Oct_2024_public.ipynb on the original Testing_DS from the PromSec paper
