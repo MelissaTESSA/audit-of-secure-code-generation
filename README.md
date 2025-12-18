@@ -40,10 +40,128 @@ cd audit-of-secure-code-generation-53E6
 ```bash
 cd PromSec
 ```
-# Set up Python dependencies (a virtual environment is recommended)
+Set up Python dependencies (a virtual environment is recommended)
 ```bash
 conda create -n promsec_env python=3.10 -y
 conda activate promsec_env```
 # Install required packages: (Python 3.x, PyTorch, PyTorch Geometric, NetworkX, Matplotlib, OpenAI API, Bandit)
 Set your OPENAI_API_KEY
 Execute the cells of Demo_PromSec_PoC_Oct_2024_public.ipynb on the original Testing_DS from the PromSec paper
+
+### 2️⃣ SVEN (Prefix-Tuning for Secure Code Generation)
+
+- **Repository:** [https://github.com/eth-sri/sven](https://github.com/eth-sri/sven)
+
+**What we reproduce:**
+
+- Official SVEN secure / vulnerable prefixes  
+- Prefix-controlled code generation  
+- Security evaluation using **CodeQL**  
+- Functionality evaluation using **HumanEval (Pass@k)**  
+
+**Setup:**
+
+```bash
+cd sven
+```
+Create virtual environment
+```bash
+conda create -n sven_env python=3.10 -y
+conda activate sven_env
+```
+ Set up Python dependencies and CodeQL
+```bash
+pip install -r requirements.txt
+pip install -e .
+./setup_codeql.sh
+```
+
+To evaluate the security of the original LLM, run the command below. The model 350m can be replaced by {2b, 6b}
+```bash
+cd scripts
+python sec_eval.py --model_type prefix \
+                   --model_dir ../trained/350m-prefix/checkpoint-last \
+                   --output_name sec-eval-350m-prefix
+
+python print_results.py --eval_dir ../experiments/sec_eval/sec-eval-350m-lm
+```
+We use the HumanEval benchmark from the MultiPL-E framework to evaluate functional correctness. For SVEN, we need to run the two branches sec and vul separately via the --control argument. The command below is for the sec branch:
+
+```bash
+python human_eval_gen.py --model_type prefix \
+                         --model_dir ../trained/350m-prefix/checkpoint-last \
+                         --control sec \
+                         --output_name human-eval-350m-prefix-sec
+
+python human_eval_exec.py --output_name human-eval-350m-prefix-sec
+```
+To view the results, run:
+```bash
+python print_results.py --eval_type human_eval \
+                        --eval_dir ../experiments/human_eval/human-eval-350m-prefix-sec
+```
+
+### 3️⃣ SafeCoder (Instruction-Tuned Secure Generation)
+
+- **Repository:** [https://github.com/eth-sri/SafeCoder](https://github.com/eth-sri/SafeCoder)
+
+**What we reproduce:**
+
+- Released LoRA-finetuned checkpoints  
+- Instruction-following secure code generation  
+- Security evaluation using **CodeQL**  
+- Functionality evaluation on **HumanEval**, **MBPP**, **MMLU**, and **TruthfulQA**  
+
+**Setup:**
+
+```bash
+cd SafeCoder
+
+# Install Python dependencies (virtual environment recommended)
+pip install -r requirements.txt
+pip install -e .
+
+# Install GitHub CodeQL
+./setup_codeql.sh
+Cd scripts
+```
+To evaluate the security of generated code, run the following commands:
+```bash
+python sec_eval.py \
+  --output_name codellama-7b-safecoder \
+  --model_name codellama-7b-lora-safecoder \
+  --eval_type trained \
+  --num_samples 100 \
+  --num_samples_per_gen 20 \
+  --temp 0.4 \
+  --max_gen_len 256 \
+  --top_p 0.95 \
+  --vul_type "" \
+  --experiments_dir /home/melissa/SafeCoder/experiments \
+  --data_dir /home/melissa/SafeCoder/data_eval/sec_eval \
+  --model_dir /home/melissa/SafeCoder
+
+python print_results.py \
+  --eval_name codellama-7b-safecoder \
+  --eval_type trained \
+  --detail
+```
+
+For utility, we consider the following benchmarks:
+```bash
+# HumanEval
+./func_eval.sh human_eval codellama-7b-safecoder-0.4 codellama-7b-lora-safecoder 0.4
+python print_results.py --eval_name codellama-7b-safecoder-0.4 --eval_type human_eval
+
+# MBPP
+./func_eval.sh mbpp codellama-7b-safecoder-0.4 codellama-7b-lora-safecoder 0.4
+python print_results.py --eval_name codellama-7b-safecoder-0.4 --eval_type mbpp
+
+# MMLU
+python mmlu_eval.py --output_name codellama-7b-safecoder --model_name codellama-7b-lora-safecoder
+python print_results.py --eval_name codellama-7b-safecoder --eval_type mmlu
+
+# TruthfulQA
+python truthfulqa_eval.py --output_name codellama-7b-safecoder --model_name codellama-7b-lora-safecoder
+python print_results.py --eval_name codellama-7b-safecoder --eval_type tqa
+```
