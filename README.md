@@ -36,11 +36,10 @@ cd audit-of-secure-code-generation-53E6
 - Functional preservation via graph similarity and fuzzing, as in the paper
 
 **Setup:**
-```bash
 cd PromSec
 # Set up Python dependencies (a virtual environment is recommended)
 conda create -n promsec_env python=3.10 -y
 conda activate promsec_env
-Install required packages: (Python 3.x, PyTorch, PyTorch Geometric, NetworkX, Matplotlib, OpenAI API, Bandit)
+# Install required packages: (Python 3.x, PyTorch, PyTorch Geometric, NetworkX, Matplotlib, OpenAI API, Bandit)
 Set your OPENAI_API_KEY
 Execute the cells of Demo_PromSec_PoC_Oct_2024_public.ipynb on the original Testing_DS from the PromSec paper
