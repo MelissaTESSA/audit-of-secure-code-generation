@@ -25,7 +25,7 @@ Summary of steps for each method:
 
 ```bash
 git clone https://anonymous.4open.science/r/audit-of-secure-code-generation-53E6/
-cd audit-of-secure-code-generation-53E6
+cd audit-of-secure-code-generation-53E6 ```
 ### 1️⃣ PromSec (Black-box Prompt Optimization)
 
 - **Repository:** https://github.com/mahmoudkanazzal/PromSec
