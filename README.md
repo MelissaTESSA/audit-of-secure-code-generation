@@ -46,8 +46,19 @@ conda create -n promsec_env python=3.10 -y
 conda activate promsec_env
 ```
 Install required packages: (Python 3.x, PyTorch, PyTorch Geometric, NetworkX, Matplotlib, OpenAI API, Bandit)
+
 Set your OPENAI_API_KEY
+
 Execute the cells of Demo_PromSec_PoC_Oct_2024_public.ipynb on the original Testing_DS from the PromSec paper
+**🧩 Reproducing Results Under Prompt Perturbation**
+
+To reproduce the results under prompt perturbation, you should use the perturbed datasets provided in this repository under PromSec directory. In the notebook `Demo_PromSec_PoC_Oct_2024_public.ipynb`, search for all occurrences of `Testing_DS` (using Ctrl+F or your editor’s search function) and replace them with the desired perturbed dataset name, for example:
+
+- `Testing_DS_VulComments` – for samples with vulnerable comments
+- `Testing_DS_DeadCode` – for samples with dead code
+- (Other `Testing_DS_x` variants as provided)
+
+These datasets contain the perturbed samples derived from the original `Testing_DS`. This allows you to evaluate the robustness of the methods under different types of prompt perturbations, following the same evaluation protocol as for the original dataset.
 
 ### 2️⃣ SVEN (Prefix-Tuning for Secure Code Generation)
 
@@ -100,6 +111,19 @@ To view the results, run:
 ```bash
 python print_results.py --eval_type human_eval \
                         --eval_dir ../experiments/human_eval/human-eval-350m-prefix-sec
+```
+**🧩 Reproducing Results Under Prompt Perturbation**
+To reproduce results under prompt perturbation for SVEN, use the perturbed datasets provided in the `sven/data_eval` directory (e.g., `train_CommentToQuestion`, `train_OneComment`, `trained_append_10lines`, etc.).
+
+**How to use a perturbed dataset:**
+
+In your evaluation command, change the `--data_dir` argument to point to the desired perturbed dataset.  
+For example, to evaluate on `trained_append_10lines`:
+
+```bash
+# 350m-prefix on trained_append_10lines
+python sec_eval.py --model_type prefix --model_dir ../trained/350m-prefix/checkpoint-last --output_name sec-eval-350m-prefix --data_dir ../data_eval/trained_append_10lines
+python print_results.py --eval_dir ../experiments/sec_eval/sec-eval-350m-prefix
 ```
 
 ### 3️⃣ SafeCoder (Instruction-Tuned Secure Generation)
@@ -165,4 +189,40 @@ python print_results.py --eval_name codellama-7b-safecoder --eval_type mmlu
 # TruthfulQA
 python truthfulqa_eval.py --output_name codellama-7b-safecoder --model_name codellama-7b-lora-safecoder
 python print_results.py --eval_name codellama-7b-safecoder --eval_type tqa
+```
+**🧩 Reproducing Results Under Prompt Perturbation**
+To reproduce results under prompt perturbation for SafeCoder, use the perturbed datasets provided in the `sven/data_eval/sec_eval` directory (e.g., `train_CommentToQuestion`, `train_OneComment`, `trained_append_10lines`, etc.).
+
+**How to use a perturbed dataset:**
+
+In your evaluation command, change the `--data_dir` argument to point to the desired perturbed dataset.  
+For example, to evaluate on `trained_append_10lines`:
+
+```bash
+# Go to the scripts directory if not already there
+cd scripts
+
+# Activate your environment (if not already active)
+source ../safecoder_env/bin/activate
+
+# Set the PYTHONPATH
+export PYTHONPATH=..
+
+# Prepare the temporary data directory and symlink for the perturbed dataset
+mkdir -p ../data_eval/temp_trained_append_10lines
+rm -f ../data_eval/temp_trained_append_10lines/trained
+ln -s ../data_eval/sec_eval/trained_append_10lines ../data_eval/temp_trained_append_10lines/trained
+
+# Run the evaluation
+python sec_eval.py \
+  --output_name codellama-7b-safecoder_trained_append_10lines \
+  --model_name codellama-7b-lora-safecoder \
+  --eval_type trained \
+  --num_samples 100 \
+  --num_samples_per_gen 20 \
+  --experiments_dir ../experiments \
+  --data_dir ../data_eval/temp_trained_append_10lines \
+  --model_dir ..
+
+# To use another perturbation, replace 'trained_append_10lines' everywhere above with your dataset name (e.g., train_CommentToQuestion)
 ```
