@@ -15,9 +15,9 @@ The audit shows that **security guarantees collapse to 3–17%** under realistic
 
 ## ▶️ Running Experiments
 
-### Phase 1 – Reproducing Original Evaluations (Quick Start)
+### Phase 1 – Robustness Under Adversarial Conditions
 
-Phase 1 strictly reproduces the original evaluation protocols and metrics reported by each method, using the authors’ official Quick Start instructions and released artifacts. No unified benchmark or additional checks are applied at this stage.
+Phase 1  reproduces the original evaluation protocols and metrics reported by each method, using the authors’ official released artifacts. No unified benchmark or additional checks are applied at this stage.
 
 The goal is to verify whether the claimed security guarantees hold under adversarial prompt perturbations, without changing the original evaluation setup.
 
