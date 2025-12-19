@@ -231,3 +231,18 @@ python sec_eval.py \
 
 # To use another perturbation, replace 'trained_append_10lines' everywhere above with your dataset name (e.g., train_CommentToQuestion)
 ```
+### Phase 2 – Unified Benchmarking Analysis
+In Phase 2, we run all three models on the same CodeSecEval benchmark and keep only snippets that pass every static analyser (CodeQL, Bandit, GPT-4o) and the unit tests—no partial credit. This gives the first apples-to-apples baseline of true secure-and-functional code before any adversarial twist.
+### 1️⃣ PromSec
+Open and run every cell of Demo_PromSec_PoC_Oct_2024_public_1.ipynb in the PromSec folder; the notebook feeds the unified CodeSecEval tasks through the original repair loop and records the consensus secure-and-functional rate.
+### 2️⃣ SVEN
+### 3️⃣ SafeCoder
+
+### Phase 3 – Robustness Under Adversarial Conditions in Unified Setting
+### 1️⃣ PromSec
+Continue with the two attack notebooks:
+  -Demo_PromSec_PoC_Oct_2024_public_Student.py (natural student-style reframing)
+  -Demo_PromSec_PoC_Oct_2024_public_Inverse.ipynb (cue-inversion that flips security guidance)
+Running both repeats the unified evaluation while injecting the adversarial prompts, letting you measure how much the already-low baseline drops when the prompt is gently twisted.
+### 2️⃣ SVEN
+### 3️⃣ SafeCoder
