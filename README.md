@@ -267,8 +267,9 @@ cd ../CodeSecEval/SecEvalBase && \
 python ../../scripts/all_analyzers.py \
   ../../experiments/sec_eval/my_eval_run_secevalbase/trained \
   SecEvalBase.json | tee ../../scripts/codeseceval.txt
-
+```
 ### Phase 3 – Robustness Under Adversarial Conditions in Unified Setting
+In phase 3, we feed the same unified CodeSecEval tasks through Student-style (natural-language reframing) and Inverse-comment (cue-flip) perturbations.
 ### 1️⃣ PromSec
 Continue with the two attack notebooks:
 
