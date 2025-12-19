@@ -234,15 +234,51 @@ python sec_eval.py \
 ### Phase 2 – Unified Benchmarking Analysis
 In Phase 2, we run all three models on the same CodeSecEval benchmark and keep only snippets that pass every static analyser (CodeQL, Bandit, GPT-4o) and the unit tests—no partial credit. This gives the first apples-to-apples baseline of true secure-and-functional code before any adversarial twist.
 ### 1️⃣ PromSec
-Open and run every cell of Demo_PromSec_PoC_Oct_2024_public_1.ipynb in the PromSec folder; the notebook feeds the unified CodeSecEval tasks through the original repair loop and records the consensus secure-and-functional rate.
+Open and run every cell of **Demo_PromSec_PoC_Oct_2024_public_1.ipynb** in the PromSec folder; the notebook feeds the unified CodeSecEval tasks through the original repair loop and records the consensus secure-and-functional rate.
 ### 2️⃣ SVEN
+Run the unified evaluation on CodeSecEval benchmark and collect consensus scores:
+
+```bash
+cd sven/scripts
+python sec_eval_unified.py \
+  --output_name SecEval_Analysis \
+  --new_dataset_json ../../CodeSecEval/SecEvalBase/SecEvalBase.json \
+  --model_type prefix \
+  --model_dir ../trained/2b-prefix/checkpoint-last \
+  --temp 0.4 \
+  --num_gen 10
+
+python all_analyzers.py \
+  ../experiments/sec_eval/SecEval_Student_Analysis/trained/new_dataset \
+  ../../CodeSecEval/SecEvalBase/SecEvalBase.json \
+  | tee codeseceval.txt
+```
 ### 3️⃣ SafeCoder
 
 ### Phase 3 – Robustness Under Adversarial Conditions in Unified Setting
 ### 1️⃣ PromSec
 Continue with the two attack notebooks:
-  -Demo_PromSec_PoC_Oct_2024_public_Student.py (natural student-style reframing)
-  -Demo_PromSec_PoC_Oct_2024_public_Inverse.ipynb (cue-inversion that flips security guidance)
+
+  **-Demo_PromSec_PoC_Oct_2024_public_Student.py** (natural student-style reframing)
+  **-Demo_PromSec_PoC_Oct_2024_public_Inverse.ipynb** (cue-inversion that flips security guidance)
 Running both repeats the unified evaluation while injecting the adversarial prompts, letting you measure how much the already-low baseline drops when the prompt is gently twisted.
 ### 2️⃣ SVEN
+Run the unified evaluation on the **Student-rephrased** prompts from CodeSecEval and collect consensus scores:
+
+```bash
+cd sven/scripts
+python sec_eval_unified.py \
+  --output_name SecEval_Student_Analysis \
+  --new_dataset_json ../../CodeSecEval-Student/SecEvalBase/SecEvalBase.json \
+  --model_type prefix \
+  --model_dir ../trained/2b-prefix/checkpoint-last \
+  --temp 0.4 \
+  --num_gen 10
+
+python all_analyzers.py \
+  ../experiments/sec_eval/SecEval_Student_Analysis/trained/new_dataset \
+  ../../CodeSecEval-Student/SecEvalBase/SecEvalBase.json \
+  | tee codeseceval_student.txt
+```
+For Inverse (cue-flip), replace every CodeSecEval-Student path with CodeSecEval-Inverse and change the output names accordingly.
 ### 3️⃣ SafeCoder
