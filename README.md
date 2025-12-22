@@ -135,7 +135,7 @@ python print_results.py --eval_dir ../experiments/sec_eval/sec-eval-350m-prefix
 
 ### 3️⃣ SafeCoder (Instruction-Tuned Secure Generation)
 
-- **Paper:** [Is Your AI-Generated Code Really Safe?](https://arxiv.org/abs/2402.09497)
+- **Paper:** [Instruction Tuning for Secure Code Generation](https://arxiv.org/abs/2402.09497)
 
 - **Repository:** [https://github.com/eth-sri/SafeCoder](https://github.com/eth-sri/SafeCoder)
 
@@ -287,7 +287,7 @@ Continue with the two attack notebooks:
   **-Demo_PromSec_PoC_Oct_2024_public_Inverse.ipynb** (cue-inversion that flips security guidance)
 Running both repeats the unified evaluation while injecting the adversarial prompts, letting you measure how much the already-low baseline drops when the prompt is gently twisted.
 ### 2️⃣ SVEN
-Run the unified evaluation on the **Student-rephrased** prompts from CodeSecEval and collect consensus scores. Execute the command within sven/scripts:
+Run the unified evaluation on the **Student-rephrased** prompts from CodeSecEval and collect consensus scores. Execute the command within **sven/scripts**:
 
 ```bash
 python sec_eval_unified.py \
@@ -305,7 +305,7 @@ python ../../sven/scripts/all_analyzers.py \
   | tee  ../../sven/scripts/codeseceval_student.txt
 
 ```
-For Inverse (cue-flip), replace every CodeSecEval-Student path with CodeSecEval-Inverse and change the output names accordingly. Execute the command within SafeCoder/scripts:
+For Inverse (cue-flip), replace every CodeSecEval-Student path with CodeSecEval-Inverse and change the output names accordingly. Execute the command within **SafeCoder/scripts**:
 ### 3️⃣ SafeCoder
 
 ```bash
