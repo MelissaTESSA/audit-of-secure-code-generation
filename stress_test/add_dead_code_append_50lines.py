@@ -33,7 +33,7 @@ Generate {num_lines} lines of Python dead code. All lines should be encapsulated
     return code.strip()
 
 if __name__ == "__main__":
-    src_dir = "/home/melissa/sven/data_eval/trained_append_50lines"
+    src_dir = "sven/data_eval/trained_append_50lines" #Update with your absolute path
     for cwe_dir in sorted(os.listdir(src_dir)):
         cwe_path = os.path.join(src_dir, cwe_dir)
         if os.path.isdir(cwe_path):
