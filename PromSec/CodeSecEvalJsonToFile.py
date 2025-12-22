@@ -25,25 +25,21 @@ def json_to_py_files(json_path, output_dir):
     print(f"Created {len(problems)} .py files in {output_dir}")
 
 if __name__ == "__main__":
-    # Original SecEvalBase and SecEvalPlus (commented out)
-    # base_json = "/home/melissa/PromSec/CodeSecEval/SecEvalBase/SecEvalBase.json"
-    # plus_json = "/home/melissa/PromSec/CodeSecEval/SecEvalPlus/SecEvalPlus.json"
-    # base_out = "/home/melissa/PromSec/CodeSecEvalDirectory/SecEvalBase"
-    # plus_out = "/home/melissa/PromSec/CodeSecEvalDirectory/SecEvalPlus"
+
     
     # Student version - Base and Plus
-    student_base_json = "/home/melissa/PromSec/CodeSecEval-Student/SecEvalBase/SecEvalBase.json"
-    student_base_out = "/home/melissa/PromSec/CodeSecEvalStudentDirectory/SecEvalBase"
+    student_base_json = "CodeSecEval-Student/SecEvalBase/SecEvalBase.json"
+    student_base_out = "CodeSecEvalStudentDirectory/SecEvalBase"
     
-    student_plus_json = "/home/melissa/PromSec/CodeSecEval-Student/SecEvalPlus/SecEvalPlus.json"
-    student_plus_out = "/home/melissa/PromSec/CodeSecEvalStudentDirectory/SecEvalPlus"
+    student_plus_json = "CodeSecEval-Student/SecEvalPlus/SecEvalPlus.json"
+    student_plus_out = "CodeSecEvalStudentDirectory/SecEvalPlus"
     
     # Inverse version - Base and Plus
-    inverse_base_json = "/home/melissa/PromSec/CodeSecEval-Inverse/SecEvalBase/SecEvalBase.json"
-    inverse_base_out = "/home/melissa/PromSec/CodeSecEvalInverseDirectory/SecEvalBase"
+    inverse_base_json = "CodeSecEval-Inverse/SecEvalBase/SecEvalBase.json"
+    inverse_base_out = "CodeSecEvalInverseDirectory/SecEvalBase"
     
-    inverse_plus_json = "/home/melissa/PromSec/CodeSecEval-Inverse/SecEvalPlus/SecEvalPlus.json"
-    inverse_plus_out = "/home/melissa/PromSec/CodeSecEvalInverseDirectory/SecEvalPlus"
+    inverse_plus_json = "CodeSecEval-Inverse/SecEvalPlus/SecEvalPlus.json"
+    inverse_plus_out = "CodeSecEvalInverseDirectory/SecEvalPlus"
     
     # Process all versions
     # json_to_py_files(base_json, base_out)
