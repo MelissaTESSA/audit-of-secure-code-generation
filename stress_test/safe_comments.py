@@ -53,7 +53,7 @@ def remove_comments(code):
     return code_without_multiline
 
 if __name__ == "__main__":
-    base_dir = "/home/melissa/PromSec/Testing_DS"  # Changed to VulComments directory
+    base_dir = "PromSec/Testing_DS"  #Update with your absolute path
     for file_name in sorted(os.listdir(base_dir)):
         if file_name.endswith('.py'):
             file_path = os.path.join(base_dir, file_name)
