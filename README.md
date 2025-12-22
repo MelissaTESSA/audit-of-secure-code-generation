@@ -29,7 +29,7 @@ cd audit-of-secure-code-generation-53E6
 ```
 ### 1️⃣ PromSec (Black-box Prompt Optimization)
 
-- **Repository:** https://github.com/mahmoudkanazzal/PromSec
+- **Repository:** https://github.com/mahmoudkanazzal/PromSec 
 
 **What we reproduce:**
 - Original PromSec repair loop
@@ -165,9 +165,9 @@ python sec_eval.py \
   --max_gen_len 256 \
   --top_p 0.95 \
   --vul_type "" \
-  --experiments_dir /home/melissa/SafeCoder/experiments \
-  --data_dir /home/melissa/SafeCoder/data_eval/sec_eval \
-  --model_dir /home/melissa/SafeCoder
+  --experiments_dir ../experiments \
+  --data_dir ../data_eval/sec_eval \
+  --model_dir ..
 
 python print_results.py \
   --eval_name codellama-7b-safecoder \
