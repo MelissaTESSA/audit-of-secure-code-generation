@@ -53,7 +53,7 @@ def remove_all_comments(code):
 
 def process_directory():
     """Process all Python files in Testing_DS_NoComment directory"""
-    source_dir = "/home/melissa/PromSec/Testing_DS_NoComment"
+    source_dir = "PromSec/Testing_DS_NoComment" #Update with your absolute path
     
     if not os.path.exists(source_dir):
         print(f"Directory {source_dir} does not exist!")
