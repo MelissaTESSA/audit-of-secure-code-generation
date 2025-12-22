@@ -29,7 +29,9 @@ cd audit-of-secure-code-generation-53E6
 ```
 ### 1️⃣ PromSec (Black-box Prompt Optimization)
 
-- **Repository:** https://github.com/mahmoudkanazzal/PromSec 
+- **CCS Paper:** [Black-box Prompt Optimization](https://dl.acm.org/doi/abs/10.1145/3658644.3690298)
+
+- **Paper Repository:** https://github.com/mahmoudkanazzal/PromSec
 
 **What we reproduce:**
 - Original PromSec repair loop
@@ -62,6 +64,8 @@ To reproduce the results under prompt perturbation, you should use the perturbed
 These datasets contain the perturbed samples derived from the original `Testing_DS`. This allows you to evaluate the robustness of the methods under different types of prompt perturbations, following the same evaluation protocol as for the original dataset.
 
 ### 2️⃣ SVEN (Prefix-Tuning for Secure Code Generation)
+
+- **Paper:** [Prefix-Tuning for Secure Code Generation](https://dl.acm.org/doi/abs/10.1145/3576915.3623175)
 
 - **Repository:** [https://github.com/eth-sri/sven](https://github.com/eth-sri/sven)
 
@@ -130,6 +134,8 @@ python print_results.py --eval_dir ../experiments/sec_eval/sec-eval-350m-prefix
 ```
 
 ### 3️⃣ SafeCoder (Instruction-Tuned Secure Generation)
+
+- **Paper:** [Is Your AI-Generated Code Really Safe?](https://arxiv.org/abs/2402.09497)
 
 - **Repository:** [https://github.com/eth-sri/SafeCoder](https://github.com/eth-sri/SafeCoder)
 
