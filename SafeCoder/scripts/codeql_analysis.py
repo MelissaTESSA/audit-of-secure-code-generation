@@ -5,7 +5,6 @@ import glob
 import csv
 
 # Usage: python codeql_analysis.py <scenarios_dir> [language] [queries_root]
-# Example: python codeql_analysis.py ~/experiments/sec_eval/my_eval_run/trained python /home/melissa/.codeql/packages/codeql/python-queries/0.9.0/Security
 
 def run_codeql_analysis(scenarios_dir, language='python', queries_root=None):
     if queries_root is None:
