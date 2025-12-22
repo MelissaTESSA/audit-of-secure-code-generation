@@ -254,10 +254,12 @@ python sec_eval_unified.py \
   --temp 0.4 \
   --num_gen 10
 
-python all_analyzers.py \
-  ../experiments/sec_eval/SecEval_Student_Analysis/trained/new_dataset \
+cd ../../CodeSecEval/SecEvalBase && \
+python ../../sven/scripts/all_analyzers.py \
+  ../../sven/experiments/sec_eval/SecEval_Analysis/trained/new_dataset \
   ../../CodeSecEval/SecEvalBase/SecEvalBase.json \
-  | tee codeseceval.txt
+  | tee  ../../sven/scripts/codeseceval.txt
+
 ```
 ### 3️⃣ SafeCoder
 Run the unified evaluation on CodeSecEval benchmark and collect consensus scores:
@@ -269,10 +271,12 @@ python sec_eval_unified.py \
   --model_dir .. \
   --codesec_json ../CodeSecEval/SecEvalBase/SecEvalBase.json
 
-cd ../CodeSecEval/SecEvalBase && \
-python ../../scripts/all_analyzers.py \
-  ../../experiments/sec_eval/my_eval_run_secevalbase/trained \
-  SecEvalBase.json | tee ../../scripts/codeseceval.txt
+cd ../../CodeSecEval/SecEvalBase && \
+python ../../SafeCoder/scripts/all_analyzers.py \
+../../SafeCoder/experiments/sec_eval/my_eval_run_secevalbase/trained \
+../../CodeSecEval/SecEvalBase/SecEvalBase.json \
+| tee ../../SafeCoder/scripts/codeseceval_attacks_base.txt 
+
 ```
 ### Phase 3 – Robustness Under Adversarial Conditions in Unified Setting
 In phase 3, we feed the same unified CodeSecEval tasks through Student-style (natural-language reframing) and Inverse-comment (cue-flip) perturbations.
@@ -283,10 +287,9 @@ Continue with the two attack notebooks:
   **-Demo_PromSec_PoC_Oct_2024_public_Inverse.ipynb** (cue-inversion that flips security guidance)
 Running both repeats the unified evaluation while injecting the adversarial prompts, letting you measure how much the already-low baseline drops when the prompt is gently twisted.
 ### 2️⃣ SVEN
-Run the unified evaluation on the **Student-rephrased** prompts from CodeSecEval and collect consensus scores:
+Run the unified evaluation on the **Student-rephrased** prompts from CodeSecEval and collect consensus scores. Execute the command within sven/scripts:
 
 ```bash
-cd sven/scripts
 python sec_eval_unified.py \
   --output_name SecEval_Student_Analysis \
   --new_dataset_json ../../CodeSecEval-Student/SecEvalBase/SecEvalBase.json \
@@ -295,15 +298,18 @@ python sec_eval_unified.py \
   --temp 0.4 \
   --num_gen 10
 
-python all_analyzers.py \
-  ../experiments/sec_eval/SecEval_Student_Analysis/trained/new_dataset \
+cd ../../CodeSecEval-Student/SecEvalBase && \
+python ../../sven/scripts/all_analyzers.py \
+  ../../sven/experiments/sec_eval/SecEval_Student_Analysis/trained/new_dataset \
   ../../CodeSecEval-Student/SecEvalBase/SecEvalBase.json \
-  | tee codeseceval_student.txt
+  | tee  ../../sven/scripts/codeseceval_student.txt
+
 ```
-For Inverse (cue-flip), replace every CodeSecEval-Student path with CodeSecEval-Inverse and change the output names accordingly.
+For Inverse (cue-flip), replace every CodeSecEval-Student path with CodeSecEval-Inverse and change the output names accordingly. Execute the command within SafeCoder/scripts:
 ### 3️⃣ SafeCoder
 
 ```bash
+
 python sec_eval_unified.py \
   --output_name my_eval_run_secevalbase_student \
   --eval_type trained \
@@ -311,10 +317,11 @@ python sec_eval_unified.py \
   --model_dir .. \
   --codesec_json ../CodeSecEval-Student/SecEvalBase/SecEvalBase.json
 
-cd ../CodeSecEval-Student/SecEvalBase && \
-python ../../scripts/all_analyzers.py \
-  ../../experiments/sec_eval/my_eval_run_secevalbase_student/trained \
-  SecEvalBase.json | tee ../../scripts/codeseceval_student.txt
+cd ../../CodeSecEval-Student/SecEvalBase && \
+python ../../SafeCoder/scripts/all_analyzers.py \
+../../SafeCoder/experiments/sec_eval/my_eval_run_secevalbase_student/trained \
+../../CodeSecEval-Student/SecEvalBase/SecEvalBase.json \
+| tee ../../SafeCoder/scripts/codeseceval__student.txt 
 ```
 
 Replace every CodeSecEval-Student path with CodeSecEval-Inverse (and choose a fresh output name such as my_eval_run_secevalbase_inverse)
