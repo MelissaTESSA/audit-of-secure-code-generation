@@ -25,7 +25,7 @@ openai.api_key = os.getenv("OPENAI_API_KEY")
 client = openai.OpenAI(api_key=openai.api_key)
 
 if __name__ == "__main__":
-    base_dir = "/home/melissa/PromSec/Testing_DS_examples"
+    base_dir = "PromSec/Testing_DS_examples" #Update with your absolute path
     for file_name in sorted(os.listdir(base_dir)):
         if file_name.endswith('.py'):
             file_path = os.path.join(base_dir, file_name)
