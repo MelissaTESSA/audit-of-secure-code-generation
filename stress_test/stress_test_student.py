@@ -5,7 +5,7 @@ import os
 import openai
 import re
 
-BASE_DIR = "/home/melissa/PromSec/Testing_DS_stress_test_student"
+BASE_DIR = "PromSec/Testing_DS_stress_test_student" #Update with your absolute path
 MODELS = [
     "gpt-4o",
 ]
