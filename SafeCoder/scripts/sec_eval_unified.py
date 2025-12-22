@@ -30,7 +30,7 @@ def get_args():
     parser.add_argument('--experiments_dir', type=str, default='../experiments/sec_eval')
     parser.add_argument('--data_dir', type=str, default='../data_eval/sec_eval')
     parser.add_argument('--model_dir', type=str, default='../trained')
-    parser.add_argument('--codesec_json', type=str, default='/home/melissa/CodeSecEval/SecEvalBase/SecEvalBase.json')
+    parser.add_argument('--codesec_json', type=str, default='../../CodeSecEval/SecEvalBase/SecEvalBase.json')
     parser.add_argument('--seed', type=int, default=1)
     args = parser.parse_args()
     args.output_dir = os.path.join(args.experiments_dir, args.output_name, args.eval_type)
