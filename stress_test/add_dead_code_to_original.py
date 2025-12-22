@@ -39,7 +39,7 @@ Original code:
     return code.strip()
 
 if __name__ == "__main__":
-    src_dir = "/home/melissa/PromSec/Testing_DS_DeadCode3"
+    src_dir = "PromSec/Testing_DS_DeadCode3" #Update with your absolute path
     for file_name in sorted(os.listdir(src_dir)):
         if file_name.startswith('test_file') and file_name.endswith('.py'):
             file_path = os.path.join(src_dir, file_name)
