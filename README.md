@@ -1,8 +1,5 @@
 # Adversarial Audit of Secure Code Generation
 
-> **⚠️ This is the anonymised artifact repo for the ACSAC 2026 paper.**  
-> **Permanent link:** [https://anonymous.4open.science/r/audit-of-secure-code-generation-53E6/](https://anonymous.4open.science/r/audit-of-secure-code-generation-53E6/)
-
 This repository contains **code, data, and scripts** required to reproduce the three-phase adversarial robustness evaluation of three state-of-the-art secure code generation methods:
 
 - **Sven** – prefix-tuning (white-box)  
